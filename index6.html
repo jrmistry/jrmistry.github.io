@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
-	<title>Geog 483 Leaflet Tutorial</title>
-	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+    <title>Geog 483 Leaflet Tutorial</title>
+    <!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    // import scripts for Leaflet
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
+    // import the geojson from the javascript file coffeeshop.js as a variable called coffeeshop
+    <script src="https://rawgit.com/jrmistry/jrmistry.github.io/master/coffeeshop.js" type="text/javascript"></script>
 </head>
 <body>
 
 <style>
- <!--   	body { margin:0; padding:0; }
-    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:500px; height:500px;}-->
+    <!--
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #mapid {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    -->
 </style>
+<div id="mapid"></div>
+<script type='text/javascript'>
+    // initialize the map object
+    var mymap = L.map('mapid').setView([43.470824, -80.544677], 15);
 
-<div id="mapid"</div>
-<script var mymap = L.map('mapid').setView([43.470824, -80.544677], 15);
-		src="https://embed.github.com/view/geojson/peterajohnson/Geog_483/master/points.geojson" type="text/javascript"></script>
+    // setup tile service - using openstreetmap.org
+    L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+    }).addTo(mymap);
 
+    // configure geojson object and add it to the map
+    L.geoJSON(coffeeshop, { // the variable coffeeshop comes from the script in line 12
+        pointToLayer: function (feature, latlng) {
+            // configure the marker properties
+            var geojsonMarkerOptions = {
+                radius: 6 + (2 * feature.properties.atmosphere),
+                fillColor: "#ffae00",
+                color: "#000000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+
+            // bind the market properties to the points of the layer
+            return L.circleMarker(latlng, geojsonMarkerOptions);
+        }
+    }).bindPopup(function (layer) { // configure pop-up
+        var name = layer.feature.properties.name;
+        var drinks_ava = (layer.feature.properties.drinks_ava).split(",").join(", ");
+        var other_prod = (layer.feature.properties.other_prod).split(",").join(", ");
+        var building_n = layer.feature.properties.building_n;
+        var atmosphere = layer.feature.properties.atmosphere;
+
+        // return a string that is the HTML code to be displayed inside the pop-up
+        return "<h1>" + name + "</h1><h3><b>" + building_n + "</b></h3><p>Atomsphere: " + atmosphere + "</p><p>Drinks available: " + drinks_ava + "</p><p>Other Products: " + other_prod + "</p>";
+    }).addTo(mymap);
+</script>
 </body>
 </html>
