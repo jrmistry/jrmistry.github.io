@@ -1,38 +1,93 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>Geog 483 Leaflet Tutorial</title>
-	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-
+	<title>Hello, world!</title>
 </head>
+
 <body>
+	<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#">Jaydeep Mistry</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-<style>
-    	body { margin:0; padding:0; }
-    	#mapid { position:absolute; top:0px; left:0px; width:100%; height:100%;}
-</style>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Education</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Experience</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Portfolio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-<div id="mapid"</div>
-<script>
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid rounded border mt-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h1 class="display-4">Jaydeep Mistry</h1>
+						<hr class="my-3">
+						<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+					</div>
+					<div class="col-sm">
+						<img class="rounded float-right img-thumbnail" alt="..." src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+					</div>
+				</div>
+			</div>
+		</div>
 
-    var mymap = L.map('mapid').setView([43.642532, -79.386936], 18);
+		<div class="jumbotron jumbotron-fluid rounded border mt-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h1 class="display-4">Jaydeep Mistry</h1>
+						<hr class="my-3">
+						<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+					</div>
+					<div class="col-sm">
+						<img class="rounded float-right img-thumbnail" alt="..." src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
-	}).addTo(mymap);
-
-</script>
-
-
-
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
 </body>
+
 </html>
