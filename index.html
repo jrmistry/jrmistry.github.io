@@ -1,310 +1,383 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<!-- Required meta tags -->
+	<title>Bootstrap Example</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous">
 
 	<!-- Leaflet CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
 	 crossorigin="" />
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 	<style>
+		body {
+			position: relative;
+		}
+
+		.site-header {
+	    background-color: rgba(0, 0, 0, .85) !important;
+		}
+
+		.progress-skills {
+			height: 30px;
+		}
+
 		.map-frame {
-			 height: 50vh; 
+			 height: 40vh; 
 		}
-
-		.scrollspy-example {
-			height: 40vh;
-			overflow: auto;
-		}
-   </style>
-
-	<title>Hello, world!</title>
+	</style>
 </head>
 
-<body>
-	<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark fixed-top">
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top site-header">
 		<div class="container">
-
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<a class="navbar-brand ml-2" href="#">Jaydeep Mistry</a>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ml-auto">
+			<div id="navbarSupportedContent" class="collapse navbar-collapse">
+				<ul class="navbar-nav ml-auto nav-pills">
 					<li class="nav-item">
-						<a class="nav-link" href="#about">About</a>
+						<a class="nav-link pl-2 pr-2" href="#about">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#skills">Skills</a>
+						<a class="nav-link pl-2 pr-2" href="#skills">Skills</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#education">Education</a>
+						<a class="nav-link pl-2 pr-2" href="#education">Education</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Experiences</a>
+						<a class="nav-link pl-2 pr-2" href="#experiences">Experiences</a>
+					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Contact</a>
+						<a class="nav-link pl-2 pr-2" href="#contact">Contact</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-	<div class="container mt-3">
+	<div class="container">
 
-		<div id="about" class="card mb-3">
-			<div class="card-body">
-				<h5 class="card-title">About Me</h5>
-				<div class="row">
-					<div class="col-lg">
-						<img class="img-thumbnail" alt="..." src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
-					</div>
-					<div class="col-sm">
-						Learn why he is the best person to hire for your next data-science or GIS project.
-					</div>
+		<div id="about" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+			<h1>About Me</h1>
+			<div class="row">
+				<div class="col-lg">
+					<img class="img-thumbnail" alt="..." src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+					<p class="container">
+						<i class="fas fa-map-marker-alt"></i>
+						La Hoya, San Diego, U.S.A.
+					</p>
+				</div>
+				<div class="col-sm lead text-center">
+					<strong>
+						Jaydeep Mistry is an persistent programmer, a dedicated friend, and a relentless problem solver. He has competed
+						in
+						various app challenges, presented his work at recognized conference, and earned the respect of his peers
+						through creative solutions.
+					</strong>
 				</div>
 			</div>
 		</div>
-
-		<div id="skills" class="card mb-3">
-			<div class="card-body">
-				<h5 class="card-title">Skills</h5>
+		<div id="skills" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+			<h1>Skills</h1>
+			<div class="card">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-sm">
-								Python
+								<div class="progress progress-skills">
+									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+									 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">95%</div>
+								</div>
 							</div>
 							<div class="col-sm">
-								<div class="progress h-100">
+								<h5>Python</h5>
+								<ul>
+									<li>Jypyter Notebooks</li>
+									<li>Pandas Framework</li>
+									<li>Matplotlib Plotting</li>
+									<li>SciKitLearn Data Science</li>
+									<li>Spacey NLP</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm">
+								<div class="progress progress-skills">
+									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+									 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">90%</div>
+								</div>
+							</div>
+							<div class="col-sm">
+								<h5>GIS (Geographic Information Science)</h5>
+								<ul>
+									<li>ArcGIS Pro</li>
+									<li>ArcGIS Online</li>
+									<li>ArcGIS JavaScript API 4.X</li>
+									<li>ArcPy</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm">
+								<div class="progress progress-skills">
+									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+									 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">80%</div>
+								</div>
+							</div>
+							<div class="col-sm">
+								<h5>Web App Development</h5>
+								<ul>
+									<li>ArcGIS Web App Builder</li>
+									<li>Ionic Framework</li>
+									<li>HTML + Bootstrap</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm">
+								<div class="progress progress-skills">
 									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
 									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
 								</div>
 							</div>
+							<div class="col-sm">
+								<h5>Teaching</h5>
+								<ul>
+									<li>Problem Solving</li>
+									<li>Performing Lectures</li>
+									<li>Quantitative Feedback</li>
+									<li>Teamwork</li>
+								</ul>
+							</div>
 						</div>
-					</li>
-					<li class="list-group-item">
-						GIS (Geographic Information Science)
-					</li>
-					<li class="list-group-item">
-						ArcGIS Pro & Onine
-					</li>
-					<li class="list-group-item">
-						Front-End Development
-					</li>
-					<li class="list-group-item">
-						Ionic Framework
 					</li>
 				</ul>
 			</div>
 		</div>
+		<div id="education" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+			<h1>Education</h1>
+			<div class="row">
+				<div class="col-lg">
+					<div class="img-thumbnail">
+						<div id="mapid" class="img-thumbnail map-frame"></div>
+					</div>
+					<p class="container">
+						<i class="fas fa-map-marker-alt"></i>
+						University of Waterloo, Ontario, Canada
+					</p>
+				</div>
+				<div class="col-sm">
+					<div class="row-sm">
+						<h5>
+							Master of Environmental studies
+						</h5>
+					</div>
+					<div class="row-sm">
+						<ul>
+							<li>Pursuing at the University of Waterloo</li>
+							<li>Expected to complete by April 2019</li>
+							<li>Researching the use of GitHub for government related work</li>
+							<li>Achieved a GPA of 90%</li>
+						</ul>
+					</div>
+					<div class="row-sm">
+						<h5>
+							Bachelors of Environmental Studies
+						</h5>
+					</div>
+					<div class="row-sm">
+						<ul>
+							<li>Graduated from the University of Waterloo</li>
+							<li>Completed in April 2017</li>
+							<li>Completed Major of Geomatics</li>
+							<li>Completed Minor in Computer Science</li>
+							<li>Achieved the Excellence in GIS Diploma</li>
+							<li>Achieved a GPA of 80%</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="experiences" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+			<h1>Experiences</h1>
+			<div class="card-columns">
+				<div class="card">
+					<div class="card-header">
+						Co-op Internship
+					</div>
+					<img class="card-img-top" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no"
+					 alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Special title treatment</h5>
+						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+					<div class="card-footer text-muted">
+						2 days ago
+					</div>
+				</div>
+				<div class="card p-3">
+					<blockquote class="blockquote mb-0 card-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						<footer class="blockquote-footer">
+							<small class="text-muted">
+								Someone famous in <cite title="Source Title">Source Title</cite>
+							</small>
+						</footer>
+					</blockquote>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src=".../100px160/" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+				<div class="card bg-primary text-white text-center p-3">
+					<blockquote class="blockquote mb-0">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+						<footer class="blockquote-footer">
+							<small>
+								Someone famous in <cite title="Source Title">Source Title</cite>
+							</small>
+						</footer>
+					</blockquote>
+				</div>
+				<div class="card text-center">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img" src=".../100px260/" alt="Card image">
+				</div>
+				<div class="card p-3 text-right">
+					<blockquote class="blockquote mb-0">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						<footer class="blockquote-footer">
+							<small class="text-muted">
+								Someone famous in <cite title="Source Title">Source Title</cite>
+							</small>
+						</footer>
+					</blockquote>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is another card with title and supporting text below. This card has some additional
+							content to make it slightly taller overall.</p>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
 
-		<div id="education" class="card mb-3">
-			<div class="card-body">
-				<h5 class="card-title">Education</h5>
-				<div class="row">
-					<div class="col-lg">
-						<div class="img-thumbnail">
-							<div id="mapid" class="img-thumbnail map-frame"></div>
+
+
+
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
 						</div>
 					</div>
-					<div class="col-sm">
-						<div class="row-sm">
-							<h5>
-								Master of Environmental studies
-							</h5>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-header">
+							Co-op Internship
 						</div>
-						<div class="row-sm">
-							<p>
-								Swagger
-							</p>
+						<img class="card-img-top" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
 						</div>
-						<div class="row-sm">
-							<h5>
-								Bachelors of Environmental Studies
-							</h5>
+						<div class="card-footer text-muted">
+							2 days ago
 						</div>
-						<div class="row-sm">
-							<p>
-								Swagger2
-							</p>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-		<div class="jumbotron jumbotron-fluid rounded border mt-3 mb-3 d-none">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm">
-						<h1 class="display-4">Jaydeep Mistry</h1>
-						<hr class="my-3">
-						<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-					</div>
-					<div class="col-sm">
-						<img class="img-thumbnail" alt="..." src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
-					</div>
+		<div id="contact" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+			<h1>Contact</h1>
+			<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
+				the navigation bar while scrolling!</p>
+			<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
+				the navigation bar while scrolling!</p>
+			<div class="row text-center">
+				<div class="col">
+					<a>
+						<i class="pl-1 fab fa-twitter-square fa-3x"></i>
+						</br>
+						Twitter
+					</a>
 				</div>
-			</div>
-		</div>
-
-		<div class="jumbotron jumbotron-fluid rounded border mt-3 mb-3 d-none">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm">
-						<h1 class="display-4">Jaydeep Mistry</h1>
-						<hr class="my-3">
-						<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-					</div>
-					<div class="col-sm">
-						<div class="img-thumbnail">
-							<div id="mapid" class="img-thumbnail"></div>
-						</div>
-					</div>
+				<div class="col">
+					<a>
+						<i class="pl-1 fab fa-github-square fa-3x"></i>
+						</br>
+						GitHub
+					</a>
 				</div>
-			</div>
-		</div>
-
-		<div class="jumbotron jumbotron-fluid rounded border mt-3 mb-3 pt-3 pb-3 d-none">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 d-none d-md-block">
-						<div id="list-example" class="list-group">
-							<a class="list-group-item list-group-item-action active" href="#list-item-1">Item 1</a>
-							<a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-							<a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-							<a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-						</div>
-					</div>
-					<div class="col-md-8">
-						<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-							<h4 id="list-item-1">Item 1</h4>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<h4 id="list-item-2">Item 2</h4>
-							<p>Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit
-								enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris
-								ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam Lorem aliqua quis ullamco deserunt sit enim
-								elit aliqua esse irure. Laborum nisi sit est tempor laborum mollit labore officia laborum excepteur commodo non
-								commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur ipsum commodo tempor sunt in proident.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<h4 id="list-item-3">Item 3</h4>
-							<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat
-								minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex
-								pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<h4 id="list-item-4">Item 4</h4>
-							<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat
-								minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex
-								pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-							<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco
-								eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt
-								tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in.
-								Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat
-								deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut
-								eiusmod cupidatat elit dolore.</p>
-						</div>
-					</div>
+				<div class="col">
+					<a>
+						<i class="pl-1 fab fa-kaggle fa-3x"></i>
+						</br>
+						Kaggle
+					</a>
+				</div>
+				<div class="col">
+					<a>
+						<i class="pl-1 fab fa-instagram fa-3x"></i>
+						</br>
+						Instagram
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	 crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	 crossorigin="anonymous"></script>
 
 	<!-- Leaflet JS -->
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
@@ -324,6 +397,11 @@
 		// }).addTo(mymap2);
 
 	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
