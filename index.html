@@ -19,17 +19,27 @@
 		body {
 			position: relative;
 		}
-
+	
 		.site-header {
-	    background-color: rgba(0, 0, 0, .85) !important;
+			background-color: rgba(0, 0, 0, .85) !important;
 		}
-
+	
 		.progress-skills {
 			height: 30px;
 		}
-
+	
 		.map-frame {
-			 height: 40vh; 
+			height: 40vh;
+		}
+	
+		.card-columns {
+			@include media-breakpoint-only(lg) {
+				column-count: 4;
+			}
+	
+			@include media-breakpoint-only(xl) {
+				column-count: 5;
+			}
 		}
 	</style>
 </head>
@@ -68,36 +78,41 @@
 
 	<div class="container">
 
-		<div id="about" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
-			<h1>About Me</h1>
-			<div class="row">
-				<div class="col-lg">
-					<img class="img-thumbnail" alt="..." src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
-					<p class="container">
-						<i class="fas fa-map-marker-alt"></i>
-						La Hoya, San Diego, U.S.A.
-					</p>
-				</div>
-				<div class="col-sm lead text-center">
-					<strong>
-						Jaydeep Mistry is an persistent programmer, a dedicated friend, and a relentless problem solver. He has competed
-						in
-						various app challenges, presented his work at recognized conference, and earned the respect of his peers
-						through creative solutions.
-					</strong>
+		<div id="about" class="container-fluid bg-success pb-3" style="padding-top:70px;">
+			<h1 class="display-4">About Me</h1>
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg">
+							<img class="img-thumbnail" alt="Jaydeep Mistry Profile Picture" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+							<p class="container">
+								<i class="fas fa-map-marker-alt"></i>
+								La Hoya, San Diego, U.S.A.
+							</p>
+						</div>
+						<div class="col-sm lead text-center">
+							<p class="lead">
+								Jaydeep Mistry is an persistent programmer, a dedicated friend, and a relentless problem solver. He has competed
+								in
+								various app challenges, presented his work at recognized conferences, and earned the respect of his peers
+								through creative solutions.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
+			
 		</div>
-		<div id="skills" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-			<h1>Skills</h1>
+		<div id="skills" class="container-fluid bg-warning pb-3" style="padding-top:70px;">
+			<h1 class="display-4">Skills</h1>
 			<div class="card">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-sm">
-								<div class="progress progress-skills">
+								<div class="progress progress-skills mb-2">
 									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
-									 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">95%</div>
+									 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"><strong>95%</strong></div>
 								</div>
 							</div>
 							<div class="col-sm">
@@ -115,9 +130,9 @@
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-sm">
-								<div class="progress progress-skills">
+								<div class="progress progress-skills mb-2">
 									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
-									 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">90%</div>
+									 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"><strong>90%</strong></div>
 								</div>
 							</div>
 							<div class="col-sm">
@@ -134,9 +149,9 @@
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-sm">
-								<div class="progress progress-skills">
+								<div class="progress progress-skills mb-2">
 									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
-									 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">80%</div>
+									 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"><strong>80%</strong></div>
 								</div>
 							</div>
 							<div class="col-sm">
@@ -152,9 +167,9 @@
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-sm">
-								<div class="progress progress-skills">
+								<div class="progress progress-skills mb-2">
 									<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"><strong>75%</strong></div>
 								</div>
 							</div>
 							<div class="col-sm">
@@ -171,211 +186,328 @@
 				</ul>
 			</div>
 		</div>
-		<div id="education" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
-			<h1>Education</h1>
-			<div class="row">
-				<div class="col-lg">
-					<div class="img-thumbnail">
-						<div id="mapid" class="img-thumbnail map-frame"></div>
-					</div>
-					<p class="container">
-						<i class="fas fa-map-marker-alt"></i>
-						University of Waterloo, Ontario, Canada
-					</p>
-				</div>
-				<div class="col-sm">
-					<div class="row-sm">
-						<h5>
-							Master of Environmental studies
-						</h5>
-					</div>
-					<div class="row-sm">
-						<ul>
-							<li>Pursuing at the University of Waterloo</li>
-							<li>Expected to complete by April 2019</li>
-							<li>Researching the use of GitHub for government related work</li>
-							<li>Achieved a GPA of 90%</li>
-						</ul>
-					</div>
-					<div class="row-sm">
-						<h5>
-							Bachelors of Environmental Studies
-						</h5>
-					</div>
-					<div class="row-sm">
-						<ul>
-							<li>Graduated from the University of Waterloo</li>
-							<li>Completed in April 2017</li>
-							<li>Completed Major of Geomatics</li>
-							<li>Completed Minor in Computer Science</li>
-							<li>Achieved the Excellence in GIS Diploma</li>
-							<li>Achieved a GPA of 80%</li>
-						</ul>
+
+		<div id="education" class="container-fluid bg-info pb-3" style="padding-top:70px;">
+			<h1 class="display-4">Education</h1>
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg">
+							<div class="img-thumbnail">
+								<div id="mapid" class="img-thumbnail map-frame"></div>
+							</div>
+							<p class="container">
+								<i class="fas fa-map-marker-alt"></i>
+								University of Waterloo, Ontario, Canada
+							</p>
+						</div>
+						<div class="col-sm">
+							<div class="row-sm">
+								<h5>
+									Master of Environmental studies
+								</h5>
+							</div>
+							<div class="row-sm">
+								<ul>
+									<li>Pursuing at the University of Waterloo</li>
+									<li>Expected to complete by April 2019</li>
+									<li>Researching the use of GitHub for government related work</li>
+									<li>Achieved a GPA of 90%</li>
+								</ul>
+							</div>
+							<div class="row-sm">
+								<h5>
+									Bachelors of Environmental Studies
+								</h5>
+							</div>
+							<div class="row-sm">
+								<ul>
+									<li>Graduated from the University of Waterloo</li>
+									<li>Completed in April 2017</li>
+									<li>Completed Major of Geomatics</li>
+									<li>Completed Minor in Computer Science</li>
+									<li>Achieved the Excellence in GIS Diploma</li>
+									<li>Achieved a GPA of 80%</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
-		<div id="experiences" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
-			<h1>Experiences</h1>
-			<div class="card-columns">
-				<div class="card">
-					<div class="card-header">
-						Co-op Internship
-					</div>
-					<img class="card-img-top" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no"
-					 alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Special title treatment</h5>
-						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-					<div class="card-footer text-muted">
-						2 days ago
-					</div>
-				</div>
-				<div class="card p-3">
-					<blockquote class="blockquote mb-0 card-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-						<footer class="blockquote-footer">
-							<small class="text-muted">
-								Someone famous in <cite title="Source Title">Source Title</cite>
-							</small>
-						</footer>
-					</blockquote>
-				</div>
-				<div class="card">
-					<img class="card-img-top" src=".../100px160/" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					</div>
-				</div>
-				<div class="card bg-primary text-white text-center p-3">
-					<blockquote class="blockquote mb-0">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-						<footer class="blockquote-footer">
-							<small>
-								Someone famous in <cite title="Source Title">Source Title</cite>
-							</small>
-						</footer>
-					</blockquote>
-				</div>
-				<div class="card text-center">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					</div>
-				</div>
-				<div class="card">
-					<img class="card-img" src=".../100px260/" alt="Card image">
-				</div>
-				<div class="card p-3 text-right">
-					<blockquote class="blockquote mb-0">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-						<footer class="blockquote-footer">
-							<small class="text-muted">
-								Someone famous in <cite title="Source Title">Source Title</cite>
-							</small>
-						</footer>
-					</blockquote>
-				</div>
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is another card with title and supporting text below. This card has some additional
-							content to make it slightly taller overall.</p>
-						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					</div>
-				</div>
-			</div>
+		
+		<div id="experiences" class="container-fluid bg-danger pb-3" style="padding-top:70px;">
+			<h1 class="display-4">Experiences</h1>
 
-
-
-
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+			<div class="card">
+				<div class="card-body">
+					<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+							 aria-selected="true">Work</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+							 aria-selected="false">Conferences</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
+							 aria-selected="false">Other</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+							<div class="card-columns">
+								<div class="card">
+									<img class="card-img-top" src=".../100px160/" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title that wraps to a new line</h5>
+										<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+											This content is a little bit longer.</p>
+									</div>
+								</div>
+								<div class="card p-3">
+									<blockquote class="blockquote mb-0 card-body">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+										<footer class="blockquote-footer">
+											<small class="text-muted">
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card">
+									<img class="card-img-top" src=".../100px160/" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+								<div class="card bg-primary text-white text-center p-3">
+									<blockquote class="blockquote mb-0">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+										<footer class="blockquote-footer">
+											<small>
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+								<div class="card">
+									<img class="card-img" src=".../100px260/" alt="Card image">
+								</div>
+								<div class="card p-3 text-right">
+									<blockquote class="blockquote mb-0">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+										<footer class="blockquote-footer">
+											<small class="text-muted">
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is another card with title and supporting text below. This card has some additional
+											content to make it slightly taller overall.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+							<div class="card-columns">
+								<div class="card">
+									<img class="card-img-top" src=".../100px160/" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title that wraps to a new line</h5>
+										<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+											This content is a little bit longer.</p>
+									</div>
+								</div>
+								<div class="card p-3">
+									<blockquote class="blockquote mb-0 card-body">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+										<footer class="blockquote-footer">
+											<small class="text-muted">
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card">
+									<img class="card-img-top" src=".../100px160/" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+								<div class="card bg-primary text-white text-center p-3">
+									<blockquote class="blockquote mb-0">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+										<footer class="blockquote-footer">
+											<small>
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+								<div class="card">
+									<img class="card-img" src=".../100px260/" alt="Card image">
+								</div>
+								<div class="card p-3 text-right">
+									<blockquote class="blockquote mb-0">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+										<footer class="blockquote-footer">
+											<small class="text-muted">
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is another card with title and supporting text below. This card has some additional
+											content to make it slightly taller overall.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+							<div class="card-columns">
+								<div class="card">
+									<div class="card-header">
+										Co-op Internship
+									</div>
+									<img class="card-img-top" alt="Jaydeep Mistry Profile Picture" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+									<div class="card-body">
+										<h5 class="card-title">Special title treatment</h5>
+										<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+										<a href="#" class="btn btn-primary">Go somewhere</a>
+									</div>
+									<div class="card-footer text-muted">
+										2 days ago
+									</div>
+								</div>
+								<div class="card p-3">
+									<blockquote class="blockquote mb-0 card-body">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+										<footer class="blockquote-footer">
+											<small class="text-muted">
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card">
+									<img class="card-img-top" alt="Jaydeep Mistry Profile Picture" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+								<div class="card bg-primary text-white text-center p-3">
+									<blockquote class="blockquote mb-0">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+										<footer class="blockquote-footer">
+											<small>
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+								<div class="card">
+									<img class="card-img-top" alt="Jaydeep Mistry Profile Picture" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no">
+								</div>
+								<div class="card p-3 text-right">
+									<blockquote class="blockquote mb-0">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+										<footer class="blockquote-footer">
+											<small class="text-muted">
+												Someone famous in <cite title="Source Title">Source Title</cite>
+											</small>
+										</footer>
+									</blockquote>
+								</div>
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is another card with title and supporting text below. This card has some additional
+											content to make it slightly taller overall.</p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-header">
-							Co-op Internship
-						</div>
-						<img class="card-img-top" src="https://lh3.googleusercontent.com/-jteC_ItjV6pPclgSa8YxlGMWsDNX8UgCcWx5zRFL87MnJUDrwGqxIasTCvH2wBuFNDoul_GlYRNL2Ge-uFAGPeZfwOV1KxhyEnUh6kHEUmQOAJDKlNVDyZtnIKcYnF60lYYWuhZqIIW9ZE82VfDv1vLnShN856k5ZA-_MQrJIXKzn2OkBtbBZXf8AdGDBA-dRYyzS9gkw1OWc1AWHYE88hM6tfyoUtzy9htyTATYambbk3KqSEICoQ07oNnUpijsBdzxkXFqORtaLWMkuWh1jji3sI0UwkEKFeMh0rx7VC2f321bOqSbFmGf9yRUlqa98TT849SCBMWO8SKi6_J78a90oBpMDB3W0viAzWOOWfd9yKzk68XDIVReRkFddHBi6PuleR6M6abZmVY-bQy48V3ZNL5xwH9oApOM6n2j--hrbNz9LU6pzzLga548O-Zq00CTopq_Hx-qbwJd-THhFXbgQtH53udwNM3mRIYS3_3T8HSJ-KlQ5kJJ7484Dw7qoxFwkpN5pafEGrNJnQUd0oZVQfpiKOY5ECU1VYct_NFn2SdTumO_yDC5I88y_N7ULVd-9nL_euVv_FVuyfAiezIHQg5f-X9wF9uMJJi4z-IsetBrw6x65xZL6eJWK8R=w1570-h883-no" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-						<div class="card-footer text-muted">
-							2 days ago
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			</div>						
 		</div>
-		<div id="contact" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-			<h1>Contact</h1>
-			<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
-				the navigation bar while scrolling!</p>
-			<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
-				the navigation bar while scrolling!</p>
-			<div class="row text-center">
-				<div class="col">
-					<a>
-						<i class="pl-1 fab fa-twitter-square fa-3x"></i>
-						</br>
-						Twitter
-					</a>
+
+		<div id="contact" class="container-fluid bg-secondary pb-3" style="padding-top:70px;padding-bottom:70px">
+			<h1 class="display-4">Contact</h1>
+			<div class="card">
+				<div class="card-body">
+					<div class="row text-center">
+						<div class="col">
+							<a href="https://twitter.com/Jaydeep__Mistry" target="_blank">
+								<i class="pl-1 fab fa-twitter-square fa-3x"></i>
+								</br>
+								Twitter
+							</a>
+						</div>
+						<div class="col">
+							<a href="https://github.com/jrmistry" target="_blank">
+								<i class="pl-1 fab fa-github-square fa-3x"></i>
+								</br>
+								GitHub
+							</a>
+						</div>
+						<div class="col">
+							<a href="https://www.kaggle.com/jrmistry" target="_blank">
+								<i class="pl-1 fab fa-kaggle fa-3x"></i>
+								</br>
+								Kaggle
+							</a>
+						</div>
+						<div class="col">
+							<a href="https://www.instagram.com/fakejd/" target="_blank">
+								<i class="pl-1 fab fa-instagram fa-3x"></i>
+								</br>
+								Instagram
+							</a>
+						</div>
+					</div>
 				</div>
-				<div class="col">
-					<a>
-						<i class="pl-1 fab fa-github-square fa-3x"></i>
-						</br>
-						GitHub
-					</a>
-				</div>
-				<div class="col">
-					<a>
-						<i class="pl-1 fab fa-kaggle fa-3x"></i>
-						</br>
-						Kaggle
-					</a>
-				</div>
-				<div class="col">
-					<a>
-						<i class="pl-1 fab fa-instagram fa-3x"></i>
-						</br>
-						Instagram
-					</a>
-				</div>
-			</div>
+			</div>			
 		</div>
 	</div>
 
