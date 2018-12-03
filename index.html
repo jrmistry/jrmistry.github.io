@@ -87,7 +87,7 @@
 	<div class="container">
 
 		<div id="about" class="container-fluid bg-success pb-3" style="padding-top:70px;">
-			<h1 class="display-4">About Me</h1>
+			<h1 class="display-4">About</h1>
 			<div class="card">
 				<div class="card-body">
 					<div class="row">
@@ -489,8 +489,10 @@
 										</p>
 									</div>
 									<ul class="list-group list-group-flush">
-										<li class="list-group-item">
-											Available on Google Play
+										<li class="list-group-item text-right">
+											<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.grttxt.jrmistry.grtext2" role="button">
+												Available on Google Play
+											</a>
 										</li>
 									</ul>
 									<div class="card-footer text-muted">
@@ -529,8 +531,10 @@
 										</p>
 									</div>
 									<ul class="list-group list-group-flush">
-										<li class="list-group-item">
-											Link
+										<li class="list-group-item text-right">
+											<a class="btn btn-primary" href="https://esricanada-ce.github.io/appchallenge/2018/teams/uw/Water3D/" role="button">
+												Available here
+											</a>
 										</li>
 									</ul>
 									<div class="card-footer text-muted">
@@ -552,8 +556,10 @@
 										</p>
 									</div>
 									<ul class="list-group list-group-flush">
-										<li class="list-group-item">
-											Link
+										<li class="list-group-item text-right">
+											<a class="btn btn-primary" href="https://esricanada-ce.github.io/appchallenge/2017/teams/uw/Team_Earth_Link/" role="button">
+												Available here
+											</a>
 										</li>
 									</ul>
 									<div class="card-footer text-muted">
@@ -586,35 +592,102 @@
 
 		<div id="contact" class="container-fluid bg-secondary pb-3" style="padding-top:70px;padding-bottom:70px">
 			<h1 class="display-4">Contact</h1>
+			<p>
+				There are many ways to reach me! Best would be email.
+			</p>
 			<div class="card">
 				<div class="card-body">
 					<div class="row text-center">
-						<div class="col">
+						<div class="col pb-3">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-link p-0" data-toggle="modal" data-target="#exampleModal">
+								<i class="pl-1 fas fa-envelope fa-3x"></i>
+								</br>
+								Email
+							</button>
+							
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">
+												Email Request
+											</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>
+												To prove that you are not a robot, please answer the question:
+											</p>
+											<p>
+												If the run rises in the East, and sets in West, and the moon can be seen during daytime and night time in the sky, what covers over 70% of the Earth, can be seen from space, and looks mostly blue if the sun is constantly shining down on it?
+											</p>
+											<form>
+												<div class="form-group">
+													<input id="emailRequest" class="form-control text-center" type="text" placeholder="WaterWaterWater">
+												</div>
+												<div class="form-group">
+													<button type="submit" onclick="validateEmailRequest()" class="btn btn-primary">Submit</button>
+												</div>
+												<div class="form-group">
+													<a id="emailAnswer" class="lead" href="mailto:#"></a>
+												</div>																								
+											</form>											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col pb-3">
 							<a href="https://twitter.com/Jaydeep__Mistry" target="_blank">
 								<i class="pl-1 fab fa-twitter-square fa-3x"></i>
 								</br>
 								Twitter
 							</a>
 						</div>
-						<div class="col">
+						<div class="col pb-3">
+							<a href="https://www.linkedin.com/in/jaydeep-mistry/" target="_blank">
+								<i class="pl-1 fab fa-linkedin fa-3x"></i>
+								</br>
+								LinkedIn
+							</a>
+						</div>
+						<div class="col pb-3">
 							<a href="https://github.com/jrmistry" target="_blank">
 								<i class="pl-1 fab fa-github-square fa-3x"></i>
 								</br>
 								GitHub
 							</a>
 						</div>
-						<div class="col">
+						<div class="col pb-3">
 							<a href="https://www.kaggle.com/jrmistry" target="_blank">
 								<i class="pl-1 fab fa-kaggle fa-3x"></i>
 								</br>
 								Kaggle
 							</a>
 						</div>
-						<div class="col">
+						<div class="col pb-3">
+							<a href="https://www.google.com/maps/contrib/105296976064275189262/" target="_blank">
+								<i class="pl-1 fab fa-google fa-3x"></i>
+								</br>
+								Google Maps
+							</a>
+						</div>
+						<div class="col pb-3">
 							<a href="https://www.instagram.com/fakejd/" target="_blank">
 								<i class="pl-1 fab fa-instagram fa-3x"></i>
 								</br>
 								Instagram
+							</a>
+						</div>
+						<div class="col pb-3">
+							<a href="https://uwaterloo.ca/geospatial-participation/people-profiles/jaydeep-mistry/" target="_blank">
+								<i class="pl-1 fas fa-graduation-cap fa-3x"></i>
+								</br>
+								UWaterloo
 							</a>
 						</div>
 					</div>
@@ -628,11 +701,31 @@
 	 crossorigin=""></script>
 
 	<script>
-		var mymap = L.map('mapid').setView([43.470837, -80.538000], 14);
+		function validateEmailRequest() {
+			var answer = document.getElementById("emailRequest");
+			var component = "jrmistry"
+			var product = "@"
+			var company = "edu."
+			var group = "uwaterloo"
+			var placer = ".ca"
+			if (answer.value == "Water" || answer.value == "water") {
+				document.getElementById("emailAnswer").href = "mailto:" + component + product + company + group + placer;
+				document.getElementById("emailAnswer").innerHTML = component + product + company + group + placer;			
+			} else {
+				document.getElementById("emailAnswer").innerHTML = '';
+			}
+			
+		};
+
+		var mymap = L.map('mapid').setView([43.469161, -80.540160], 14);
 
 		L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 		}).addTo(mymap);
+
+		// Tim Hortons at SCH
+    	L.marker([43.469161, -80.540160]).addTo(mymap)
+        	.bindPopup('<a href="https://uwaterloo.ca/" target="_blank"><h5>University of Waterloo</h5></a>');
 
 		// var mymap2 = L.map('mapid2').setView([43.470837, -80.538000], 14);
 
