@@ -68,13 +68,10 @@
 			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand ml-2" href="#">Jaydeep Mistry</a>
+			<a class="navbar-brand ml-2" href="#about">Jaydeep Mistry</a>
 
 			<div id="navbarSupportedContent" class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto nav-pills pt-1">
-					<li class="nav-item">
-						<a class="nav-link pl-2 pr-2" href="#about">About</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link pl-2 pr-2" href="#skills">Skills</a>
 					</li>
@@ -107,7 +104,7 @@
 						</div>
 						<div class="col-sm lead text-center">
 							<p class="lead mb-0">
-								Jaydeep Mistry is an persistent programmer, a dedicated friend, and a relentless problem solver. He has
+								Jaydeep Mistry is a persistent programmer, a dedicated friend, and a relentless problem solver. He has
 								competed
 								in
 								various app challenges, presented his work at recognized conferences, and earned the respect of his peers
@@ -134,11 +131,11 @@
 							<div class="col-sm">
 								<h5>Python</h5>
 								<ul>
-									<li>Jypyter Notebooks</li>
+									<li>Jupyter Notebooks</li>
 									<li>Pandas Framework</li>
 									<li>Matplotlib Plotting</li>
-									<li>SciKitLearn Data Science</li>
-									<li>Spacey NLP</li>
+									<li>scikit-learn Machine Learning</li>
+									<li>spaCy NLP</li>
 								</ul>
 							</div>
 						</div>
@@ -622,7 +619,7 @@
 											<h5 class="modal-title" id="exampleModalLabel">
 												Email Request
 											</h5>
-											<button type="button" class="close" aria-label="Close">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
@@ -740,15 +737,14 @@
 			var emailRequest = document.getElementById("emailRequest");
 			var emailAnswer = document.getElementById("emailAnswer");
 
-			var component = "jrmistry"
+			var component = "jaydeep.mistry"
 			var product = "@"
-			var company = "edu."
 			var group = "uwaterloo"
 			var placer = ".ca"
 
 			if (emailRequest.value == "Water" || emailRequest.value == "water") {				
-				emailAnswer.href = "mailto:" + component + product + company + group + placer;
-				emailAnswer.innerHTML = component + product + company + group + placer;
+				emailAnswer.href = "mailto:" + component + product + group + placer;
+				emailAnswer.innerHTML = component + product + group + placer;
 			} else {
 				emailAnswer.innerHTML = '';
 				emailRequest.value = '';
