@@ -56,6 +56,9 @@
                         <a class="nav-link" href="#cell-education">Education</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#cell-experiences">Experiences</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#cell-contact">Contact</a>
                     </li>
                 </ul>
@@ -263,7 +266,104 @@
                     Out [4]:
                 </div>
                 <div class="media-body">
-                    
+                    <div class="mb-2">
+
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            Filters:
+                            <label class="btn btn-outline-primary active mb-2">
+                                <input type="radio" name="options" id="option1" onclick="filterSelection('all')"
+                                    checked>Show
+                                All
+                            </label>
+                            <label class="btn btn-outline-primary mb-2">
+                                <input type="radio" name="options" id="option2"
+                                    onclick="filterSelection('card-work')">Work
+                            </label>
+                            <label class="btn btn-outline-primary mb-2">
+                                <input type="radio" name="options" id="option3"
+                                    onclick="filterSelection('card-projects')">Projects
+                            </label>
+                            <label class="btn btn-outline-primary mb-2">
+                                <input type="radio" name="options" id="option4"
+                                    onclick="filterSelection('card-conference')">Conferences
+                            </label>
+                            <label class="btn btn-outline-primary mb-2">
+                                <input type="radio" name="options" id="option4"
+                                    onclick="filterSelection('card-conference')">Conferences
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="experience-cards" class="card-columns">
+                        <div class="card card-experience card-projects">
+                            <img src="assets/Mistry_Jaydeep_Square.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Projects</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                        <div class="card p-3 card-experience card-conference">
+                            <blockquote class="blockquote mb-0 card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                                </p>
+                                <footer class="blockquote-footer">
+                                    <small class="text-muted">
+                                        Someone famous in <cite title="Source Title">Conference</cite>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="card card-experience card-work">
+                            <img src="assets/Mistry_Jaydeep_Square.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to
+                                    additional content.</p>
+                                <p class="card-text"><small class="text-muted">Work</small></p>
+                            </div>
+                        </div>
+                        <div class="card bg-primary text-white text-center p-3 card-experience card-projects">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                                <footer class="blockquote-footer text-white">
+                                    <small>
+                                        Someone famous in <cite title="Source Title">Projects</cite>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="card text-center card-experience card-work">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has a regular title and short paragraphy of text below
+                                    it.</p>
+                                <p class="card-text"><small class="text-muted">Work</small></p>
+                            </div>
+                        </div>
+                        <div class="card card-experience card-conference">
+                            <img src="assets/Mistry_Jaydeep_Square.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card p-3 text-right card-experience card-projects">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                                </p>
+                                <footer class="blockquote-footer">
+                                    <small class="text-muted">
+                                        Someone famous in <cite title="Source Title">Projects</cite>
+                                    </small>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="card card-experience card-work">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is another card with title and supporting text below. This
+                                    card has some additional content to make it slightly taller overall.</p>
+                                <p class="card-text"><small class="text-muted">Work</small></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -398,10 +498,30 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
 
     </div>
 
-
-
-
     <!-- Optional JavaScript -->
+    <script>
+        function filterSelection(tag) {
+            var card, cards, index, alreadyHidden;
+            cards = document.getElementsByClassName("card-experience");
+
+            for (index = 0; index < cards.length; index++) {
+                card = cards[index];
+                alreadyHidden = card.classList.contains("d-none");
+
+                if ((tag == "all") || (card.classList.contains(tag))) {
+                    if (alreadyHidden) {
+                        card.classList.remove("d-none");
+                    }
+                } else {
+                    if (!alreadyHidden) {
+                        card.classList.add("d-none");
+                    }
+                };
+            };
+        };
+
+        filterSelection("all");
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
