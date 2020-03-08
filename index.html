@@ -203,43 +203,7 @@
                                 <th scope="col">Year</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">0</th>
-                                <td>Geography</td>
-                                <td>Graduate Masters</td>
-                                <td>University of Waterloo</td>
-                                <td>2020</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Python for Data Science &
-                                    Machine Learning Bootcamp</td>
-                                <td>Certificate</td>
-                                <td>Udemy</td>
-                                <td>2018</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Excellence in GIS</td>
-                                <td>Diploma</td>
-                                <td>University of Waterloo</td>
-                                <td>2017</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Computer Science</td>
-                                <td>Undergraduate Minor</td>
-                                <td>University of Waterloo</td>
-                                <td>2017</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Geomatics, Honours</td>
-                                <td>Undergraduate Major</td>
-                                <td>University of Waterloo</td>
-                                <td>2017</td>
-                            </tr>
+                        <tbody id="education_table_rows">
                         </tbody>
                     </table>
                 </div>
@@ -392,7 +356,7 @@
                         <table class="table ">
                             <thead>
                                 <tr>
-                                    <th scope="col"></th>
+                                    <th scope="col">#</th>
                                     <th scope="col">Logo</th>
                                     <th scope="col">URL</th>
                                 </tr>
@@ -500,18 +464,39 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
 
     <!-- Optional JavaScript -->
     <script>
-        let requestURL = "https://raw.githubusercontent.com/jrmistry/jrmistry.github.io/master/assets/profile.json";
+        let requestURL = "https://raw.githubusercontent.com/jrmistry/jrmistry.github.io/master/assets/profile_data.json";
         let request = new XMLHttpRequest();
-        
+
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
 
-        request.onload = function() {
+        request.onload = function () {
             const data = request.response;
             console.log(data);
-            console.log(data['members'].length)
-        }
+            console.log(data['education'].length);
+
+            data['education'].forEach(educationRow => {
+                var table, row, rowCell, rowCellItem;
+                table = document.querySelector("#education_table_rows");
+                row = document.createElement("tr");
+
+                Object.keys(educationRow).forEach(key => {
+                    rowCell = document.createElement("td");
+                    if (key == "index") {
+                        rowCell = document.createElement("th");
+                    };
+                    rowCell.scope = "row";
+                    rowCellItem = document.createTextNode(educationRow[key]);
+                    rowCell.appendChild(rowCellItem);
+                    row.appendChild(rowCell);
+                });
+                
+                table.appendChild(row);
+            });
+        };
+
+
 
         function filterSelection(tag) {
             var card, cards, index, alreadyHidden;
@@ -524,11 +509,11 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
                 if ((tag == "all") || (card.classList.contains(tag))) {
                     if (alreadyHidden) {
                         card.classList.remove("d-none");
-                    }
+                    };
                 } else {
                     if (!alreadyHidden) {
                         card.classList.add("d-none");
-                    }
+                    };
                 };
             };
         };
