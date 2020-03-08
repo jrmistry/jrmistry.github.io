@@ -36,6 +36,32 @@
             "year": "2017"
         }
     ],
+    "contacts": [
+        {
+            "index": 0,
+            "fab-class": "fab fa-linkedin fa-3x",
+            "href": "https://www.linkedin.com/in/jaydeep-mistry/",
+            "text": "linkedin.com/in/jaydeep-mistry"
+        },
+        {
+            "index": 1,
+            "fab-class": "fab fa-twitter-square fa-3x",
+            "href": "https://twitter.com/Jaydeep__Mistry",
+            "text": "twitter.com/Jaydeep__Mistry"
+        },
+        {
+            "index": 2,
+            "fab-class": "fab fa-kaggle fa-3x",
+            "href": "https://www.kaggle.com/jrmistry",
+            "text": "kaggle.com/jrmistry"
+        },
+        {
+            "index": 3,
+            "fab-class": "fab fa-github-square fa-3x",
+            "href": "https://github.com/jrmistry",
+            "text": "github.com/jrmistry"
+        }
+    ],
     "experiences": {
         "tags": [
             {
