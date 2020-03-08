@@ -500,6 +500,19 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
 
     <!-- Optional JavaScript -->
     <script>
+        let requestURL = "https://raw.githubusercontent.com/jrmistry/jrmistry.github.io/master/assets/experiences.json";
+        let request = new XMLHttpRequest();
+        
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+            const data = request.response;
+            console.log(data);
+            console.log(data['members'].length)
+        }
+
         function filterSelection(tag) {
             var card, cards, index, alreadyHidden;
             cards = document.getElementsByClassName("card-experience");
