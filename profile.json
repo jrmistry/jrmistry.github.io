@@ -1,0 +1,76 @@
+{
+    "education": [
+        {
+            "index": 0,
+            "subject": "Geography",
+            "degree": "Graduate Masters",
+            "school": "University of Waterloo",
+            "year": "2020"
+        },
+        {
+            "index": 1,
+            "subject": "Python for Data Science & Machine Learning Bootcamp",
+            "degree": "Certificate",
+            "school": "Udemy",
+            "year": "2018"
+        },
+        {
+            "index": 2,
+            "subject": "Excellence in GIS",
+            "degree": "Diploma",
+            "school": "University of Waterloo",
+            "year": "2017"
+        },
+        {
+            "index": 3,
+            "subject": "Computer Science",
+            "degree": "Undergraduate Minor",
+            "school": "University of Waterloo",
+            "year": "2017"
+        },
+        {
+            "index": 4,
+            "subject": "Geomatics, Honours",
+            "degree": "Undergraduate Major",
+            "school": "University of Waterloo",
+            "year": "2017"
+        }
+    ],
+    "experiences": {
+        "tags": [
+            {
+                "index": 0,
+                "tag": "card-work",
+                "text": "Work"
+            },
+            {
+                "index": 1,
+                "tag": "card-blog",
+                "text": "Blog"
+            },
+            {
+                "index": 2,
+                "tag": "card-projects",
+                "text": "Projects"
+            },
+            {
+                "index": 3,
+                "tag": "card-conferences",
+                "text": "Conferences"
+            },
+            {
+                "index": 4,
+                "tag": "card-data-science",
+                "text": "Data Science"
+            },
+            {
+                "index": 5,
+                "tag": "card-gis",
+                "text": "GIS"
+            }
+        ],
+        "cards": [
+            {}
+        ]
+    }
+}
