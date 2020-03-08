@@ -361,61 +361,7 @@
                                     <th scope="col">URL</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">0</th>
-                                    <td>
-                                        <a href="https://www.linkedin.com/in/jaydeep-mistry/" target="_blank">
-                                            <i class="fab fa-linkedin fa-3x"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="https://www.linkedin.com/in/jaydeep-mistry/" target="_blank"
-                                            class="text-break">
-                                            linkedin.com/in/jaydeep-mistry
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>
-                                        <a href="https://twitter.com/Jaydeep__Mistry" target="_blank">
-                                            <i class="fab fa-twitter-square fa-3x"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="https://twitter.com/Jaydeep__Mistry" target="_blank"
-                                            class="text-break">
-                                            twitter.com/Jaydeep__Mistry
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>
-                                        <a href="https://www.kaggle.com/jrmistry" target="_blank">
-                                            <i class="fab fa-kaggle fa-3x"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="https://www.kaggle.com/jrmistry" target="_blank" class="text-break">
-                                            kaggle.com/jrmistry
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>
-                                        <a href="https://github.com/jrmistry" target="_blank">
-                                            <i class="fab fa-github-square fa-3x"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="https://github.com/jrmistry" target="_blank" class="text-break">
-                                            github.com/jrmistry
-                                        </a>
-                                    </td>
-                                </tr>
+                            <tbody id="contacts_table_rows">
                             </tbody>
                         </table>
                     </div>
@@ -476,21 +422,55 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
             console.log(data);
             console.log(data['education'].length);
 
-            data['education'].forEach(educationRow => {
+            data['education'].forEach(rowItems => {
                 var table, row, rowCell, rowCellItem;
                 table = document.querySelector("#education_table_rows");
                 row = document.createElement("tr");
 
-                Object.keys(educationRow).forEach(key => {
+                Object.keys(rowItems).forEach(key => {
                     rowCell = document.createElement("td");
                     if (key == "index") {
                         rowCell = document.createElement("th");
                     };
                     rowCell.scope = "row";
-                    rowCellItem = document.createTextNode(educationRow[key]);
+                    rowCellItem = document.createTextNode(rowItems[key]);
                     rowCell.appendChild(rowCellItem);
                     row.appendChild(rowCell);
                 });
+
+                table.appendChild(row);
+            });
+
+            data['contacts'].forEach(rowItems => {
+                var table, row, rowCell, rowCellItem, link, fab;
+                table = document.querySelector("#contacts_table_rows");
+                row = document.createElement("tr");
+
+                rowCell = document.createElement("th");
+                rowCell.scope = "row";
+                rowCellItem = document.createTextNode(rowItems["index"]);
+                rowCell.appendChild(rowCellItem);
+                row.appendChild(rowCell);
+
+                rowCell = document.createElement("td");
+                link = document.createElement("a");
+                link.href = rowItems["href"];
+                link.target = "_blank";
+                fab = document.createElement("i");
+                fab.className = rowItems["fab-class"];
+                link.appendChild(fab);
+                rowCell.appendChild(link);
+                row.appendChild(rowCell);
+
+                rowCell = document.createElement("td");
+                link = document.createElement("a");
+                link.href = rowItems["href"];
+                link.target = "_blank";
+                link.className = "text-break";
+                rowCellItem = document.createTextNode(rowItems["text"]);
+                link.appendChild(rowCellItem);
+                rowCell.append(link);
+                row.appendChild(rowCell);
                 
                 table.appendChild(row);
             });
