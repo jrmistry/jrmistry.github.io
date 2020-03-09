@@ -107,6 +107,7 @@
                 "body": "Attended the GIS in Education conference to learn how to natively use Jupyter Notebooks in ArcGIS Pro",
                 "date": "Mar 2020",
                 "location": "Toronto, ON, Canada",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1235659460615553024?s=20",
                 "tags": "card-conference card-gis card-data-science"
             },
@@ -166,6 +167,7 @@
                 "body": "Volunteered for the TMLS and helped organize an NLP Chatbot creation workshop with guests from Bespoke",
                 "date": "Nov 2019",
                 "location": "Toronto, ON, Canada",
+                "img": "",
                 "url": "https://www.kaggle.com/jrmistry/tmls-2019-bespoke-chatbot-nlp-workshop",
                 "tags": "card-blog card-volunteering card-data-science"
             },
@@ -175,6 +177,7 @@
                 "body": "Attend the Esri International User Conference and present my app called SMART ",
                 "date": "Jul 2019",
                 "location": "San Diego, Ca, USA",
+                "img": "",
                 "url": "https://twitter.com/jevandusen/status/1148394236494192642?s=20",
                 "tags": "card-conference card-volunteering"
             },
@@ -194,6 +197,7 @@
                 "body": "Attend the International CEC Conference to discuss environmental entrepreneurship and University partnerships",
                 "date": "Jun 2019",
                 "location": "Mexico City, CDMX, Mexico",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1143172619631337475?s=20",
                 "tags": "card-projects card-volunteering"
             },
@@ -203,6 +207,7 @@
                 "body": "Attend the first ever NeuroTechON conference where they showcased startups solving problems related to the human brain",
                 "date": "Jun 2019",
                 "location": "Kitchener, ON, Canada",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1141822873339928583?s=20",
                 "tags": "card-conference"
             },
@@ -212,6 +217,7 @@
                 "body": "Attend the TrueNorth conference to see how startups in Kitchener are using tech for civic good",
                 "date": "Jun 2019",
                 "location": "Kitchener, ON, Canada",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1141404692624396291?s=20",
                 "tags": "card-conference"
             },
@@ -221,6 +227,7 @@
                 "body": "Attend the OGP Summit to see how governments worldwide are using Open Data and Open Government ideas for public good",
                 "date": "May 2019",
                 "location": "Kitchener, ON, Canada",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1133850715498143744?s=20",
                 "tags": "card-conference"
             },
@@ -230,6 +237,7 @@
                 "body": "Attend the Go Open Data Conference to see how government leaders in Ontario are sharing and utilizing open data",
                 "date": "May 2019",
                 "location": "Toronto, ON, Canada",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1124370705997553669?s=20",
                 "tags": "card-conference"
             },
@@ -239,6 +247,7 @@
                 "body": "Discussion of how my team and I made an Augmented Reality app using Esri's Runtime SDKs for AR/VR",
                 "date": "Apr 2019",
                 "location": "Waterloo, ON, Canada",
+                "img": "",
                 "url": "https://ecce.esri.ca/wpecce/2019/04/16/ecce-app-challenge-2019-how-we-made-an-ar-app-in-5-days/",
                 "tags": "card-blog card-gis"
             },
@@ -248,6 +257,7 @@
                 "body": "Run a workshop to teach 30+ students about basic ConvNN for image classification aerial imagery",
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
+                "img": "",
                 "url": "https://www.kaggle.com/jcarrillo/machine-learning-for-geospatial-data-workshop-2a",
                 "tags": "card-blog card-volunteering card-data-science card-gis"
             },
@@ -257,6 +267,7 @@
                 "body": "Run a workshop to teach 30+ students about machine learning and data science using geospatial data",
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
+                "img": "",
                 "url": "https://www.kaggle.com/jrmistry/uwgeo-club-ml-for-vector-geodata-workshop-1",
                 "tags": "card-blog card-volunteering card-data-science card-gis"
             },
@@ -266,6 +277,7 @@
                 "body": "Attend and present my research at SKI2019 about visualizing GitHub government organizations on a world map",
                 "date": "Feb 2019",
                 "location": "Toronto, ON, Canada",
+                "img": "",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1099456347068817408?s=20",
                 "tags": "card-conference card-volunteering"
             },
@@ -275,6 +287,7 @@
                 "body": "Teaching undergraduate students 3rd year undergraduate Spatial Databases (GEOG 387)",
                 "date": "2017-18",
                 "location": "Waterloo, ON, Canada",
+                "img": "",
                 "url": "",
                 "tags": "card-work card-gis"
             },
@@ -304,6 +317,7 @@
                 "body": "Worked in the Community Maps team to improve the Esri Inc World Topographic basemaps for Canadian communities",
                 "date": "Apr 2016",
                 "location": "Toronto, ON, Canada",
+                "img": "",
                 "url": "https://esri.ca/en/programs/the-community-map-of-canada",
                 "tags": "card-work card-gis"
             },
@@ -313,6 +327,7 @@
                 "body": "Worked with physical scientist Shari Hayne to maintain and update Canadian peat extraction greenhouse gas estimates",
                 "date": "Aug 2015",
                 "location": "Gatineau, QC, Canada",
+                "img": "",
                 "url": "https://www.canada.ca/en/environment-climate-change.html",
                 "tags": "card-work card-gis"
             },
@@ -322,6 +337,7 @@
                 "body": "Worked for the University's Library Technologies and Facilities Section to provide multi-tear I.T. support to 100+ staff",
                 "date": "Dec 2014",
                 "location": "Waterloo, ON, Canada",
+                "img": "",
                 "url": "https://lib.uwaterloo.ca/web/index.php",
                 "tags": "card-work"
             },
@@ -331,6 +347,7 @@
                 "body": "Worked in the I.T. department to provide tear-1 customer service to 200+ staff",
                 "date": "Apr 2014",
                 "location": "Chalk River, ON, Canada",
+                "img": "",
                 "url": "https://www.aecl.ca/",
                 "tags": "card-work"
             },
@@ -340,6 +357,7 @@
                 "body": "",
                 "date": "",
                 "location": "",
+                "img": "",
                 "url": "",
                 "tags": ""
             }
