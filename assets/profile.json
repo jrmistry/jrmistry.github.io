@@ -257,7 +257,7 @@
                 "body": "Run a workshop to teach 30+ students about basic ConvNN for image classification aerial imagery",
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
-                "img": "",
+                "img": "assets/imgs/ML_for_Geospatial_Data_2.png",
                 "url": "https://www.kaggle.com/jcarrillo/machine-learning-for-geospatial-data-workshop-2a",
                 "tags": "card-blog card-volunteering card-data-science card-gis"
             },
@@ -267,7 +267,7 @@
                 "body": "Run a workshop to teach 30+ students about machine learning and data science using geospatial data",
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
-                "img": "",
+                "img": "assets/imgs/ML_for_Geospatial_Data_1.png",
                 "url": "https://www.kaggle.com/jrmistry/uwgeo-club-ml-for-vector-geodata-workshop-1",
                 "tags": "card-blog card-volunteering card-data-science card-gis"
             },
@@ -297,7 +297,7 @@
                 "body": "Built a web-app to visualize se level rise in City of Vancouver in 3D GIS",
                 "date": "Feb 2018",
                 "location": "Waterloo, ON, Canada",
-                "img": "esricanada-ce.github.io_ecce-app-challenge-2018_Water3D_app_(iPad).png",
+                "img": "assets/imgs/esricanada-ce.github.io_ecce-app-challenge-2018_Water3D_app_(iPad).png",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/983092818867621888?s=20",
                 "tags": "card-projects card-gis"
             },
