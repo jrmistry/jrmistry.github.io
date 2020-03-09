@@ -116,8 +116,9 @@
                 "body": "Shared some of the data visualization code that I had written for a job interview with the Toronto Police Services",
                 "date": "Feb 2020",
                 "location": "Toronto, ON, Canada",
+                "img": "TPS_Interview_Notebook.png",
                 "url": "https://www.kaggle.com/jrmistry/plotly-mapbox-tps-data-analyst-interview-notes",
-                "tags": "card-projects card-blog card-data-science card-gis"
+                "tags": "card-blog card-data-science card-gis"
             },
             {
                 "title": "Completed my Master in Geography",
@@ -135,7 +136,7 @@
                 "date": "Jan 2020",
                 "location": "Waterloo, ON, Canada",
                 "url": "https://www.kaggle.com/jrmistry/plotly-how-to-create-diverging-stacked-bar-chart",
-                "tags": "card-projects card-blog card-data-science"
+                "tags": "card-blog card-data-science"
             },
             {
                 "title": "How to change plot data using Dropdowns",
@@ -144,7 +145,7 @@
                 "date": "Jan 2020",
                 "location": "Waterloo, ON, Canada",
                 "url": "https://www.kaggle.com/jrmistry/plotly-how-to-change-plot-data-using-dropdowns",
-                "tags": "card-projects card-blog card-data-science"
+                "tags": "card-blog card-data-science"
             },
             {
                 "title": "Growth of the ECCE App Challenge",
@@ -153,7 +154,7 @@
                 "date": "Dec 2019",
                 "location": "Toronto, ON, Canada",
                 "url": "https://ecce.esri.ca/wpecce/2019/12/30/growth-of-the-ecce-app-challenge/",
-                "tags": "card-projects card-blog card-gis"
+                "tags": "card-blog card-gis"
             },
             {
                 "title": "Bespoke - Chatbot NLP Workshop",
@@ -162,7 +163,7 @@
                 "date": "Nov 2019",
                 "location": "Toronto, ON, Canada",
                 "url": "https://www.kaggle.com/jrmistry/tmls-2019-bespoke-chatbot-nlp-workshop",
-                "tags": "card-projects card-blog card-volunteering card-data-science"
+                "tags": "card-blog card-volunteering card-data-science"
             },
             {
                 "title": "App Pitch Presentation",
@@ -243,7 +244,7 @@
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
                 "url": "https://www.kaggle.com/jcarrillo/machine-learning-for-geospatial-data-workshop-2a",
-                "tags": "card-projects card-blog card-volunteering card-data-science card-gis"
+                "tags": "card-blog card-volunteering card-data-science card-gis"
             },
             {
                 "title": "Machine Learning for Geospatial Data Workshop #1",
@@ -252,7 +253,7 @@
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
                 "url": "https://www.kaggle.com/jrmistry/uwgeo-club-ml-for-vector-geodata-workshop-1",
-                "tags": "card-projects card-blog card-volunteering card-data-science card-gis"
+                "tags": "card-blog card-volunteering card-data-science card-gis"
             },
             {
                 "title": "Present at SKI2019",
@@ -269,7 +270,7 @@
                 "body": "Teaching undergraduate students 3rd year undergraduate Spatial Databases (GEOG 387)",
                 "date": "2017-18",
                 "location": "Waterloo, ON, Canada",
-                "url": "",
+                "url": "https://www.linkedin.com/in/jaydeep-mistry/",
                 "tags": "card-work card-gis"
             },
             {
