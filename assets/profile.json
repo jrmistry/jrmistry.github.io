@@ -116,7 +116,7 @@
                 "body": "Shared some of the data visualization code that I had written for a job interview with the Toronto Police Services",
                 "date": "Feb 2020",
                 "location": "Toronto, ON, Canada",
-                "img": "TPS_Interview_Notebook.png",
+                "img": "assets/imgs/TPS_Interview_Notebook.png",
                 "url": "https://www.kaggle.com/jrmistry/plotly-mapbox-tps-data-analyst-interview-notes",
                 "tags": "card-blog card-data-science card-gis"
             },
@@ -126,6 +126,7 @@
                 "body": "My research was to understand how government organizations collaborate together for software development on GitHub",
                 "date": "Feb 2020",
                 "location": "Waterloo, ON, Canada",
+                "img": "assets/imgs/Map_Global_Connections_2.png",
                 "url": "https://www.linkedin.com/posts/jaydeep-mistry_masters-geography-activity-6638151914104205312-B0fU",
                 "tags": "card-projects card-python card-gis"
             },
@@ -135,6 +136,7 @@
                 "body": "Wrote a Python notebook demonstrating how to create diverging stacked bar charts for sentiment analysis using Plotly",
                 "date": "Jan 2020",
                 "location": "Waterloo, ON, Canada",
+                "img": "assets/imgs/Diverging_Stacked_Bar_Chart.png",
                 "url": "https://www.kaggle.com/jrmistry/plotly-how-to-create-diverging-stacked-bar-chart",
                 "tags": "card-blog card-data-science"
             },
@@ -144,6 +146,7 @@
                 "body": "Wrote a Python notebook demonstrating how to change plot data using dropdowns in the Plotly data visualization library",
                 "date": "Jan 2020",
                 "location": "Waterloo, ON, Canada",
+                "img": "assets/imgs/Plotly_Plot_With_Dropdown.png",
                 "url": "https://www.kaggle.com/jrmistry/plotly-how-to-change-plot-data-using-dropdowns",
                 "tags": "card-blog card-data-science"
             },
@@ -153,6 +156,7 @@
                 "body": "I discuss my participation in the ECCE App Challenge and how much the competition size has grown over the years",
                 "date": "Dec 2019",
                 "location": "Toronto, ON, Canada",
+                "img": "https://ecce.esri.ca/wpecce/wp-content/uploads/2019/12/ECCE-App-Challenge-Number-of-Teams-Schools.png",
                 "url": "https://ecce.esri.ca/wpecce/2019/12/30/growth-of-the-ecce-app-challenge/",
                 "tags": "card-blog card-gis"
             },
@@ -180,6 +184,7 @@
                 "body": "Built an Augmented Reality app called SMART to visualize real-estate in AR for community engagement",
                 "date": "Jul 2019",
                 "location": "Waterloo, ON, Canada",
+                "img": "https://pbs.twimg.com/media/EAVo3mSWkAAeg5W?format=jpg&name=4096x4096",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1151222423825653760?s=20",
                 "tags": "card-projects card-gis"
             },
@@ -270,7 +275,7 @@
                 "body": "Teaching undergraduate students 3rd year undergraduate Spatial Databases (GEOG 387)",
                 "date": "2017-18",
                 "location": "Waterloo, ON, Canada",
-                "url": "https://www.linkedin.com/in/jaydeep-mistry/",
+                "url": "",
                 "tags": "card-work card-gis"
             },
             {
@@ -279,6 +284,7 @@
                 "body": "Built a web-app to visualize se level rise in City of Vancouver in 3D GIS",
                 "date": "Feb 2018",
                 "location": "Waterloo, ON, Canada",
+                "img": "esricanada-ce.github.io_ecce-app-challenge-2018_Water3D_app_(iPad).png",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/983092818867621888?s=20",
                 "tags": "card-projects card-gis"
             },
@@ -288,6 +294,7 @@
                 "body": "Built a web-app to encourage users to take environmentally friendly commute options instead of driving a car",
                 "date": "Feb 2017",
                 "location": "Waterloo, ON, Canada",
+                "img": "assets/imgs/esricanada-ce.github.io_ecce-app-challenge-2017_Team_Earth_Link_app_(iPad).png",
                 "url": "https://esricanada-ce.github.io/appchallenge/2017/teams/uw/Team_Earth_Link/",
                 "tags": "card-projects card-gis"
             },

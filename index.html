@@ -56,10 +56,10 @@
                         <a class="nav-link" href="#cell-education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cell-experiences">Experiences</a>
+                        <a class="nav-link" href="#cell-contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cell-contact">Contact</a>
+                        <a class="nav-link" href="#cell-experiences">Experiences</a>
                     </li>
                 </ul>
             </div>
@@ -210,50 +210,10 @@
             </div>
         </div>
 
-        <div id="cell-experiences" class="pt-cell bg-white">
-            <div class="media">
-                <div class='ml-2 mr-2 text-primary'>
-                    In [4]:
-                </div>
-                <div class="media-body">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <div>
-                                Jaydeep_Mistry.experiences()
-                            </div>
-                            <div>
-                                <a class="text-info font-italic"># You can filter the cards below!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="media mt-3">
-                <div class='mr-2 text-danger'>
-                    Out [4]:
-                </div>
-                <div class="media-body">
-                    <div class="mb-2">
-
-                        <div id="experience_filters" class="btn-group-toggle" data-toggle="buttons">
-                            Filters:
-                            <label class="btn btn-outline-primary border-0 mb-2 active">
-                                <input type="radio" name="options" id="option1" onclick="filterSelection('all')"
-                                    checked>Show All
-                            </label>
-                        </div>
-                    </div>
-
-                    <div id="experience-cards" class="card-columns">
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div id="cell-contact" class="pt-cell bg-white">
             <div class="media">
                 <div class='ml-2 mr-2 text-primary'>
-                    In [5]:
+                    In [4]:
                 </div>
                 <div class="media-body">
                     <div class="card bg-light">
@@ -267,7 +227,7 @@
             </div>
             <div class="media mt-3">
                 <div class='mr-2 text-danger'>
-                    Out [5]:
+                    Out [4]:
                 </div>
                 <div class="media-body">
                     <div class="table-responsive-xl">
@@ -284,6 +244,46 @@
                         </table>
                     </div>
 
+                </div>
+            </div>
+        </div>
+
+        <div id="cell-experiences" class="pt-cell bg-white">
+            <div class="media">
+                <div class='ml-2 mr-2 text-primary'>
+                    In [5]:
+                </div>
+                <div class="media-body">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div>
+                                Jaydeep_Mistry.experiences()
+                            </div>
+                            <div>
+                                <a class="text-info font-italic"># You can filter the cards below!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media mt-3">
+                <div class='mr-2 text-danger'>
+                    Out [5]:
+                </div>
+                <div class="media-body">
+                    <div class="mb-2">
+
+                        <div id="experience_filters" class="btn-group-toggle" data-toggle="buttons">
+                            Filters:
+                            <label class="btn btn-outline-primary border-0 mb-2 active">
+                                <input type="radio" name="options" id="option1" onclick="filterSelection('all')"
+                                    checked>Show All
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="experience-cards" class="card-columns">
+                    </div>
                 </div>
             </div>
         </div>
@@ -363,14 +363,32 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
             data['experiences']['tags'].forEach(rowItems => {
                 var label = document.createElement("label");
                 label.setAttribute("class", "btn btn-outline-primary border-0 mb-2");
-                label.innerHTML = `<input id="${"filter_" + rowItems["text"]}" type="radio" name="options" onclick="filterSelection('${rowItems["tag"]}')">${rowItems["text"]}`;
+                label.innerHTML = `
+                <input id="${"filter_" + rowItems["text"]}" 
+                       type="radio"
+                       name="options"
+                       onclick="filterSelection('${rowItems["tag"]}')"
+                >${rowItems["text"]}`;
                 document.getElementById("experience_filters").appendChild(label);
             });
 
             data['experiences']['cards'].forEach(rowItems => {
+                if (rowItems["img"] == "") {
+                    var img = ``;
+                } else {
+                    var img = `<img src="${rowItems["img"]}" class="card-img-top" alt="">`;
+                }
+
+                if (rowItems["url"] == "") {
+                    var url = ``;
+                } else {
+                    var url = `<a href="${rowItems["url"]}" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>`;
+                }
+
                 var card = document.createElement("div");
                 card.setAttribute("class", "card card-experience " + rowItems["tags"]);
                 card.innerHTML = `
+                ${img}
                 <div class="card-body">
                     <h5 class="card-title">${rowItems["title"]}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${rowItems["subtitle"]}</h6>
@@ -378,7 +396,7 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
                 </div>
                 <div class="card-footer text-right">
                     <small class="text-muted">${rowItems["date"]} | ${rowItems["location"]}</small>
-                    <a href="${rowItems["url"]}" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+                    ${url}
                 </div>
                 `;
                 if (rowItems["title"] != "") {
