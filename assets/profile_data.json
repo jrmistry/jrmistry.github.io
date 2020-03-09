@@ -81,8 +81,8 @@
             },
             {
                 "index": 2,
-                "tag": "card-voluteering",
-                "text": "volunteering"
+                "tag": "card-volunteering",
+                "text": "Volunteering"
             },
             {
                 "index": 3,
@@ -102,26 +102,128 @@
         ],
         "cards": [
             {
+                "title": "GISinEd2020 Conference",
+                "subtitle": "Esri Canada",
+                "body": "Attended the GIS in Education conference to learn how to natively use Jupyter Notebooks in ArcGIS Pro",
+                "date": "Mar 2020",
+                "location": "Toronto, On, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1235659460615553024?s=20",
+                "tags": "card-conference card-gis card-data-science"
+            },
+            {
+                "title": "Completed my Master in Geography",
+                "subtitle": "University of Waterloo",
+                "body": "My research was to understand how government organizations collaborate together for software development on GitHub",
+                "date": "Feb 2020",
+                "location": "Waterloo, On, Canada",
+                "url": "https://www.linkedin.com/posts/jaydeep-mistry_masters-geography-activity-6638151914104205312-B0fU",
+                "tags": "card-projects card-python"
+            },
+            {
+                "title": "App Pitch Presentation",
+                "subtitle": "Esri Inc. User Conference",
+                "body": "Got a chance to attend the Esri International User Conference and present my app called SMART",
+                "date": "Jul 2019",
+                "location": "San Diego, Ca, USA",
+                "url": "https://twitter.com/jevandusen/status/1148394236494192642?s=20",
+                "tags": "card-conference card-volunteering"
+            },
+            {
+                "title": "Win the ECCE App Challenge",
+                "subtitle": "Esri Canada Center of Excellence",
+                "body": "Built an Augmented Reality app called SMART to visualize real-estate in AR for community engagement",
+                "date": "Jul 2019",
+                "location": "Waterloo, On, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1151222423825653760?s=20",
+                "tags": "card-projects card-gis"
+            },
+            {
+                "title": "University of Waterloo Waterloo Liaison",
+                "subtitle": "Commission for Environmental Cooperation (CEC)",
+                "body": "Attend the International CEC Conference to discuss University partnerships to improve environmental entrepreneurship",
+                "date": "Jun 2019",
+                "location": "Mexico City, CDMX, Mexico",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1143172619631337475?s=20",
+                "tags": "card-projects card-volunteering"
+            },
+            {
+                "title": "Attend NeuroTechON",
+                "subtitle": "Ontario Brain Institute",
+                "body": "Attend the first ever NeuroTechON conference where they showcased startups solving problems related to the human brain",
+                "date": "Jun 2019",
+                "location": "Kitchener, ON, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1141822873339928583?s=20",
+                "tags": "card-conference"
+            },
+            {
+                "title": "Attend TrueNorth2018",
+                "subtitle": "True North Conference",
+                "body": "Attend the TrueNorth conference to see how startups in Kitchener are using tech for civic good",
+                "date": "Jun 2019",
+                "location": "Kitchener, ON, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1141404692624396291?s=20",
+                "tags": "card-conference"
+            },
+            {
+                "title": "Attend OGPSummit2019",
+                "subtitle": "Open Government Partnership Conference",
+                "body": "Attend the OGP Summit to see how governments worldwide are using Open Data and Open Government ideas for good",
+                "date": "May 2019",
+                "location": "Kitchener, ON, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1133850715498143744?s=20",
+                "tags": "card-conference"
+            },
+            {
+                "title": "Attend GOOD19",
+                "subtitle": "Go Open Data Conference",
+                "body": "Attend the Go Open Data Conference to see how government leaders in Ontario are sharing and utilizing open data",
+                "date": "May 2019",
+                "location": "Toronto, ON, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1124370705997553669?s=20",
+                "tags": "card-conference"
+            },
+            {
+                "title": "Present at SKI2019",
+                "subtitle": "Spatial Knowledge and Information Conference",
+                "body": "Attend and present my research at SKI2019 about visualizing GitHub government organizations on a world map",
+                "date": "Feb 2019",
+                "location": "Toronto, ON, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/1099456347068817408?s=20",
+                "tags": "card-conference card-volunteering"
+            },
+            {
                 "title": "Graduate Teaching Assistant",
                 "subtitle": "University of Waterloo",
                 "body": "Teaching undergraduate students 3rd year undergraduate Spatial Databases (GEOG 387)",
-                "footer": "2017-18, Waterloo, ON, Canada",
+                "date": "2017-18",
+                "location": "Waterloo, ON, Canada",
                 "url": "",
-                "tags": "card-work"
+                "tags": "card-work card-gis"
             },
             {
-                "title": "Open Data Conference",
-                "subtitle": "",
-                "body": "Attended the 2nd annual conference and discussed smart cities and open data initiatives affecting Ontario.",
-                "footer": "2018, City of Barrie, ON, Canada",
-                "url": "https://esri.ca/en/programs/the-community-map-of-canada",
-                "tags": "card-conference"
+                "title": "2nd Place in the ECCE App Challenge",
+                "subtitle": "Esri Canada Center of Excellence",
+                "body": "Built a web-app to visualize se level rise in City of Vancouver in 3D GIS",
+                "date": "Feb 2018",
+                "location": "Waterloo, On, Canada",
+                "url": "https://twitter.com/Jaydeep__Mistry/status/983092818867621888?s=20",
+                "tags": "card-projects card-gis"
+            },
+            {
+                "title": "2nd Place in the ECCE App Challenge",
+                "subtitle": "Esri Canada Center of Excellence",
+                "body": "Built a web-app to encourage users to take environmentally friendly commute options instead of driving a car",
+                "date": "Feb 2017",
+                "location": "Waterloo, On, Canada",
+                "url": "https://esricanada-ce.github.io/appchallenge/2017/teams/uw/Team_Earth_Link/",
+                "tags": "card-projects card-gis"
             },
             {
                 "title": "GIS Analyst",
                 "subtitle": "Esri Canada",
                 "body": "Worked in the Community Maps team to improve the Esri Inc World Topographic basemap.",
-                "footer": "2016, Toronto, ON, Canada",
+                "date": "Apr 2016",
+                "location": "Toronto, On, Canada",
                 "url": "",
                 "tags": "card-work"
             },
@@ -129,7 +231,8 @@
                 "title": "Junior Land Use Change Analyst",
                 "subtitle": "Environment Canada",
                 "body": "Worked with physical scientist Shari Hayne to maintain and update Canadian peat extraction greenhouse gas estimates.",
-                "footer": "2015, Gatineau, QC, Canada",
+                "date": "Aug 2015",
+                "location": "Gatineau, QC, Canada",
                 "url": "https://www.canada.ca/en/environment-climate-change.html",
                 "tags": "card-work"
             },
@@ -137,7 +240,8 @@
                 "title": "Library Systems Technician",
                 "subtitle": "University of Waterloo",
                 "body": "Worked for the University's Library Technologies and Facilities Section to provide multi-tear I.T. support to 100+ staff.",
-                "footer": "2014, Waterloo, ON, Canada",
+                "date": "Dec 2014",
+                "location": "Waterloo, On, Canada",
                 "url": "https://lib.uwaterloo.ca/web/index.php",
                 "tags": "card-work"
             },
@@ -145,7 +249,8 @@
                 "title": "Desktop Support Technician",
                 "subtitle": "Atomic Energy of Canada Limited (AECL)",
                 "body": "Worked in the I.T. department to provide tear-1 customer service to 200+ staff.",
-                "footer": "2014, Chalk River, ON, Canada",
+                "date": "Apr 2014",
+                "location": "Chalk River, On, Canada",
                 "url": "https://www.aecl.ca/",
                 "tags": "card-work"
             },
@@ -153,7 +258,8 @@
                 "title": "",
                 "subtitle": "",
                 "body": "",
-                "footer": "",
+                "date": "",
+                "location": "",
                 "url": "",
                 "tags": ""
             }
