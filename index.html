@@ -221,6 +221,9 @@
                             <div>
                                 Jaydeep_Mistry.experiences()
                             </div>
+                            <div>
+                                <a class="text-info font-italic"># You can filter the cards below!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -232,101 +235,16 @@
                 <div class="media-body">
                     <div class="mb-2">
 
-                        <div class="btn-group-toggle" data-toggle="buttons">
+                        <div id="experience_filters" class="btn-group-toggle" data-toggle="buttons">
                             Filters:
-                            <label class="btn btn-outline-primary active mb-2">
+                            <label class="btn btn-outline-primary border-0 mb-2 active">
                                 <input type="radio" name="options" id="option1" onclick="filterSelection('all')"
-                                    checked>Show
-                                All
-                            </label>
-                            <label class="btn btn-outline-primary mb-2">
-                                <input type="radio" name="options" id="option2"
-                                    onclick="filterSelection('card-work')">Work
-                            </label>
-                            <label class="btn btn-outline-primary mb-2">
-                                <input type="radio" name="options" id="option3"
-                                    onclick="filterSelection('card-projects')">Projects
-                            </label>
-                            <label class="btn btn-outline-primary mb-2">
-                                <input type="radio" name="options" id="option4"
-                                    onclick="filterSelection('card-conference')">Conferences
-                            </label>
-                            <label class="btn btn-outline-primary mb-2">
-                                <input type="radio" name="options" id="option4"
-                                    onclick="filterSelection('card-conference')">Conferences
+                                    checked>Show All
                             </label>
                         </div>
                     </div>
 
                     <div id="experience-cards" class="card-columns">
-                        <div class="card card-experience card-projects">
-                            <img src="assets/Mistry_Jaydeep_Square.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Projects</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                        <div class="card p-3 card-experience card-conference">
-                            <blockquote class="blockquote mb-0 card-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                                </p>
-                                <footer class="blockquote-footer">
-                                    <small class="text-muted">
-                                        Someone famous in <cite title="Source Title">Conference</cite>
-                                    </small>
-                                </footer>
-                            </blockquote>
-                        </div>
-                        <div class="card card-experience card-work">
-                            <img src="assets/Mistry_Jaydeep_Square.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to
-                                    additional content.</p>
-                                <p class="card-text"><small class="text-muted">Work</small></p>
-                            </div>
-                        </div>
-                        <div class="card bg-primary text-white text-center p-3 card-experience card-projects">
-                            <blockquote class="blockquote mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                                <footer class="blockquote-footer text-white">
-                                    <small>
-                                        Someone famous in <cite title="Source Title">Projects</cite>
-                                    </small>
-                                </footer>
-                            </blockquote>
-                        </div>
-                        <div class="card text-center card-experience card-work">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has a regular title and short paragraphy of text below
-                                    it.</p>
-                                <p class="card-text"><small class="text-muted">Work</small></p>
-                            </div>
-                        </div>
-                        <div class="card card-experience card-conference">
-                            <img src="assets/Mistry_Jaydeep_Square.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card p-3 text-right card-experience card-projects">
-                            <blockquote class="blockquote mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                                </p>
-                                <footer class="blockquote-footer">
-                                    <small class="text-muted">
-                                        Someone famous in <cite title="Source Title">Projects</cite>
-                                    </small>
-                                </footer>
-                            </blockquote>
-                        </div>
-                        <div class="card card-experience card-work">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is another card with title and supporting text below. This
-                                    card has some additional content to make it slightly taller overall.</p>
-                                <p class="card-text"><small class="text-muted">Work</small></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -441,6 +359,32 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
                 table.appendChild(row);
             });
 
+            data['experiences']['tags'].forEach(rowItems => {
+                var label = document.createElement("label");
+                label.setAttribute("class", "btn btn-outline-primary border-0 mb-2");
+                label.innerHTML = `<input id="${"filter_" + rowItems["text"]}" type="radio" name="options" onclick="filterSelection('${rowItems["tag"]}')">${rowItems["text"]}`;
+                document.getElementById("experience_filters").appendChild(label);
+            });
+
+            data['experiences']['cards'].forEach(rowItems => {
+                var card = document.createElement("div");
+                card.setAttribute("class", "card card-experience " + rowItems["tags"]);
+                card.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title">${rowItems["title"]}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${rowItems["subtitle"]}</h6>
+                    <p class="card-text">${rowItems["body"]}</p>
+                </div>
+                <div class="card-footer text-right">
+                    <small class="text-muted">${rowItems["footer"]}</small>
+                    <a href="${rowItems["url"]}" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                `;
+                if (rowItems["title"] != "") {
+                    document.getElementById("experience-cards").appendChild(card);
+                };
+            });
+
             data['contacts'].forEach(rowItems => {
                 var table, row, rowCell, rowCellItem, link, fab;
                 table = document.querySelector("#contacts_table_rows");
@@ -471,12 +415,10 @@ Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_bla
                 link.appendChild(rowCellItem);
                 rowCell.append(link);
                 row.appendChild(rowCell);
-                
+
                 table.appendChild(row);
             });
         };
-
-
 
         function filterSelection(tag) {
             var card, cards, index, alreadyHidden;
