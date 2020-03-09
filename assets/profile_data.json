@@ -80,6 +80,11 @@
                 "text": "Projects"
             },
             {
+                "index": 2,
+                "tag": "card-voluteering",
+                "text": "volunteering"
+            },
+            {
                 "index": 3,
                 "tag": "card-conferences",
                 "text": "Conferences"
@@ -97,8 +102,61 @@
         ],
         "cards": [
             {
-                "true": true
-            }
+                "title": "Graduate Teaching Assistant",
+                "subtitle": "University of Waterloo",
+                "body": "Teaching undergraduate students 3rd year undergraduate Spatial Databases (GEOG 387)",
+                "footer": "2017-18, Waterloo, ON, Canada",
+                "url": "",
+                "tags": "card-work"
+            },
+            {
+                "title": "Open Data Conference",
+                "subtitle": "",
+                "body": "Attended the 2nd annual conference and discussed smart cities and open data initiatives affecting Ontario.",
+                "footer": "2018, City of Barrie, ON, Canada",
+                "url": "https://esri.ca/en/programs/the-community-map-of-canada",
+                "tags": "card-conference"
+            },
+            {
+                "title": "GIS Analyst",
+                "subtitle": "Esri Canada",
+                "body": "Worked in the Community Maps team to improve the Esri Inc World Topographic basemap.",
+                "footer": "2016, Toronto, ON, Canada",
+                "url": "",
+                "tags": "card-work"
+            },
+            {
+                "title": "Junior Land Use Change Analyst",
+                "subtitle": "Environment Canada",
+                "body": "Worked with physical scientist Shari Hayne to maintain and update Canadian peat extraction greenhouse gas estimates.",
+                "footer": "2015, Gatineau, QC, Canada",
+                "url": "https://www.canada.ca/en/environment-climate-change.html",
+                "tags": "card-work"
+            },
+            {
+                "title": "Library Systems Technician",
+                "subtitle": "University of Waterloo",
+                "body": "Worked for the University's Library Technologies and Facilities Section to provide multi-tear I.T. support to 100+ staff.",
+                "footer": "2014, Waterloo, ON, Canada",
+                "url": "https://lib.uwaterloo.ca/web/index.php",
+                "tags": "card-work"
+            },
+            {
+                "title": "Desktop Support Technician",
+                "subtitle": "Atomic Energy of Canada Limited (AECL)",
+                "body": "Worked in the I.T. department to provide tear-1 customer service to 200+ staff.",
+                "footer": "2014, Chalk River, ON, Canada",
+                "url": "https://www.aecl.ca/",
+                "tags": "card-work"
+            },
+            {
+                "title": "",
+                "subtitle": "",
+                "body": "",
+                "footer": "",
+                "url": "",
+                "tags": ""
+            },
         ]
     }
 }
