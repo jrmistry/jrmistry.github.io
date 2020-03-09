@@ -106,23 +106,68 @@
                 "subtitle": "Esri Canada",
                 "body": "Attended the GIS in Education conference to learn how to natively use Jupyter Notebooks in ArcGIS Pro",
                 "date": "Mar 2020",
-                "location": "Toronto, On, Canada",
+                "location": "Toronto, ON, Canada",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1235659460615553024?s=20",
                 "tags": "card-conference card-gis card-data-science"
+            },
+            {
+                "title": "Data Analyst Job Interview Notes",
+                "subtitle": "Python Notebook",
+                "body": "Shared some of the data visualization code that I had written for a job interview with the Toronto Police Services",
+                "date": "Feb 2020",
+                "location": "Toronto, ON, Canada",
+                "url": "https://www.kaggle.com/jrmistry/plotly-mapbox-tps-data-analyst-interview-notes",
+                "tags": "card-projects card-blog card-data-science card-gis"
             },
             {
                 "title": "Completed my Master in Geography",
                 "subtitle": "University of Waterloo",
                 "body": "My research was to understand how government organizations collaborate together for software development on GitHub",
                 "date": "Feb 2020",
-                "location": "Waterloo, On, Canada",
+                "location": "Waterloo, ON, Canada",
                 "url": "https://www.linkedin.com/posts/jaydeep-mistry_masters-geography-activity-6638151914104205312-B0fU",
-                "tags": "card-projects card-python"
+                "tags": "card-projects card-python card-gis"
+            },
+            {
+                "title": "How to create diverging stacked bar charts",
+                "subtitle": "Python Notebook",
+                "body": "Wrote a Python notebook demonstrating how to create diverging stacked bar charts for sentiment analysis using Plotly",
+                "date": "Jan 2020",
+                "location": "Waterloo, ON, Canada",
+                "url": "https://www.kaggle.com/jrmistry/plotly-how-to-create-diverging-stacked-bar-chart",
+                "tags": "card-projects card-blog card-data-science"
+            },
+            {
+                "title": "How to change plot data using Dropdowns",
+                "subtitle": "Python Notebook",
+                "body": "Wrote a Python notebook demonstrating how to change plot data using dropdowns in the Plotly data visualization library",
+                "date": "Jan 2020",
+                "location": "Waterloo, ON, Canada",
+                "url": "https://www.kaggle.com/jrmistry/plotly-how-to-change-plot-data-using-dropdowns",
+                "tags": "card-projects card-blog card-data-science"
+            },
+            {
+                "title": "Growth of the ECCE App Challenge",
+                "subtitle": "Esri Canada Centre of Excellence",
+                "body": "I discuss my participation in the ECCE App Challenge and how much the competition size has grown over the years",
+                "date": "Dec 2019",
+                "location": "Toronto, ON, Canada",
+                "url": "https://ecce.esri.ca/wpecce/2019/12/30/growth-of-the-ecce-app-challenge/",
+                "tags": "card-projects card-blog card-gis"
+            },
+            {
+                "title": "Bespoke - Chatbot NLP Workshop",
+                "subtitle": "Toronto Machine Learning Summit (TMLS)",
+                "body": "Volunteered for the TMLS and helped organize an NLP Chatbot creation workshop with guests from Bespoke",
+                "date": "Nov 2019",
+                "location": "Toronto, ON, Canada",
+                "url": "https://www.kaggle.com/jrmistry/tmls-2019-bespoke-chatbot-nlp-workshop",
+                "tags": "card-projects card-blog card-volunteering card-data-science"
             },
             {
                 "title": "App Pitch Presentation",
                 "subtitle": "Esri Inc. User Conference",
-                "body": "Got a chance to attend the Esri International User Conference and present my app called SMART",
+                "body": "Attend the Esri International User Conference and present my app called SMART ",
                 "date": "Jul 2019",
                 "location": "San Diego, Ca, USA",
                 "url": "https://twitter.com/jevandusen/status/1148394236494192642?s=20",
@@ -133,14 +178,14 @@
                 "subtitle": "Esri Canada Center of Excellence",
                 "body": "Built an Augmented Reality app called SMART to visualize real-estate in AR for community engagement",
                 "date": "Jul 2019",
-                "location": "Waterloo, On, Canada",
+                "location": "Waterloo, ON, Canada",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1151222423825653760?s=20",
                 "tags": "card-projects card-gis"
             },
             {
-                "title": "University of Waterloo Waterloo Liaison",
+                "title": "University of Waterloo Liaison",
                 "subtitle": "Commission for Environmental Cooperation (CEC)",
-                "body": "Attend the International CEC Conference to discuss University partnerships to improve environmental entrepreneurship",
+                "body": "Attend the International CEC Conference to discuss environmental entrepreneurship and University partnerships",
                 "date": "Jun 2019",
                 "location": "Mexico City, CDMX, Mexico",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1143172619631337475?s=20",
@@ -167,7 +212,7 @@
             {
                 "title": "Attend OGPSummit2019",
                 "subtitle": "Open Government Partnership Conference",
-                "body": "Attend the OGP Summit to see how governments worldwide are using Open Data and Open Government ideas for good",
+                "body": "Attend the OGP Summit to see how governments worldwide are using Open Data and Open Government ideas for public good",
                 "date": "May 2019",
                 "location": "Kitchener, ON, Canada",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1133850715498143744?s=20",
@@ -181,6 +226,33 @@
                 "location": "Toronto, ON, Canada",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1124370705997553669?s=20",
                 "tags": "card-conference"
+            },
+            {
+                "title": "How we made an AR App in 5 days",
+                "subtitle": "ECCE App Challenge",
+                "body": "Discussion of how my team and I made an Augmented Reality app using Esri's Runtime SDKs for AR/VR",
+                "date": "Apr 2019",
+                "location": "Waterloo, ON, Canada",
+                "url": "https://ecce.esri.ca/wpecce/2019/04/16/ecce-app-challenge-2019-how-we-made-an-ar-app-in-5-days/",
+                "tags": "card-blog card-gis"
+            },
+            {
+                "title": "Machine Learning for Geospatial Data Workshop #2",
+                "subtitle": "Geospatial Club",
+                "body": "Run a workshop to teach 30+ students about basic ConvNN for image classification aerial imagery",
+                "date": " Feb 2019",
+                "location": "University of Waterloo",
+                "url": "https://www.kaggle.com/jcarrillo/machine-learning-for-geospatial-data-workshop-2a",
+                "tags": "card-projects card-blog card-volunteering card-data-science card-gis"
+            },
+            {
+                "title": "Machine Learning for Geospatial Data Workshop #1",
+                "subtitle": "Geospatial Club",
+                "body": "Run a workshop to teach 30+ students about machine learning and data science using geospatial data",
+                "date": " Feb 2019",
+                "location": "University of Waterloo",
+                "url": "https://www.kaggle.com/jrmistry/uwgeo-club-ml-for-vector-geodata-workshop-1",
+                "tags": "card-projects card-blog card-volunteering card-data-science card-gis"
             },
             {
                 "title": "Present at SKI2019",
@@ -205,7 +277,7 @@
                 "subtitle": "Esri Canada Center of Excellence",
                 "body": "Built a web-app to visualize se level rise in City of Vancouver in 3D GIS",
                 "date": "Feb 2018",
-                "location": "Waterloo, On, Canada",
+                "location": "Waterloo, ON, Canada",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/983092818867621888?s=20",
                 "tags": "card-projects card-gis"
             },
@@ -214,43 +286,43 @@
                 "subtitle": "Esri Canada Center of Excellence",
                 "body": "Built a web-app to encourage users to take environmentally friendly commute options instead of driving a car",
                 "date": "Feb 2017",
-                "location": "Waterloo, On, Canada",
+                "location": "Waterloo, ON, Canada",
                 "url": "https://esricanada-ce.github.io/appchallenge/2017/teams/uw/Team_Earth_Link/",
                 "tags": "card-projects card-gis"
             },
             {
                 "title": "GIS Analyst",
                 "subtitle": "Esri Canada",
-                "body": "Worked in the Community Maps team to improve the Esri Inc World Topographic basemap.",
+                "body": "Worked in the Community Maps team to improve the Esri Inc World Topographic basemaps for Canadian communities",
                 "date": "Apr 2016",
-                "location": "Toronto, On, Canada",
-                "url": "",
-                "tags": "card-work"
+                "location": "Toronto, ON, Canada",
+                "url": "https://esri.ca/en/programs/the-community-map-of-canada",
+                "tags": "card-work card-gis"
             },
             {
                 "title": "Junior Land Use Change Analyst",
                 "subtitle": "Environment Canada",
-                "body": "Worked with physical scientist Shari Hayne to maintain and update Canadian peat extraction greenhouse gas estimates.",
+                "body": "Worked with physical scientist Shari Hayne to maintain and update Canadian peat extraction greenhouse gas estimates",
                 "date": "Aug 2015",
                 "location": "Gatineau, QC, Canada",
                 "url": "https://www.canada.ca/en/environment-climate-change.html",
-                "tags": "card-work"
+                "tags": "card-work card-gis"
             },
             {
                 "title": "Library Systems Technician",
                 "subtitle": "University of Waterloo",
-                "body": "Worked for the University's Library Technologies and Facilities Section to provide multi-tear I.T. support to 100+ staff.",
+                "body": "Worked for the University's Library Technologies and Facilities Section to provide multi-tear I.T. support to 100+ staff",
                 "date": "Dec 2014",
-                "location": "Waterloo, On, Canada",
+                "location": "Waterloo, ON, Canada",
                 "url": "https://lib.uwaterloo.ca/web/index.php",
                 "tags": "card-work"
             },
             {
                 "title": "Desktop Support Technician",
                 "subtitle": "Atomic Energy of Canada Limited (AECL)",
-                "body": "Worked in the I.T. department to provide tear-1 customer service to 200+ staff.",
+                "body": "Worked in the I.T. department to provide tear-1 customer service to 200+ staff",
                 "date": "Apr 2014",
-                "location": "Chalk River, On, Canada",
+                "location": "Chalk River, ON, Canada",
                 "url": "https://www.aecl.ca/",
                 "tags": "card-work"
             },
