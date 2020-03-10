@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <!-- Load plotly.js into the DOM -->
+    <!-- <script src='https://cdn.plot.ly/plotly-latest.min.js'></script> -->
+
     <title>Jaydeep Mistry</title>
 
     <style>
@@ -30,6 +33,18 @@
 
         .site-header {
             background-color: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        @media (min-width: 768px) {
+            .card-columns {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .card-columns {
+                column-count: 3;
+            }
         }
     </style>
 </head>
@@ -312,9 +327,9 @@
                         <div class="card-body">
                             <p class="card-text text-break">
                                 <pre class="text-white">
-Website made by © Jaydeep Mistry
-Made to resemble Jupyter Notebooks
-Not a real notebook or kernel
+<div class="text-danger">Not a real notebook or kernel</div>
+Website made by © <a href="https://www.linkedin.com/in/jaydeep-mistry/" target="_blank">Jaydeep Mistry</a>
+Made to resemble <a href="https://jupyter.org/" target="_blank">Jupyter Notebooks</a>
 
 Hosted on <a href="https://github.com/jrmistry/jrmistry.github.io/" target="_blank">GitHub Pages</a>
 Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></pre>
@@ -329,17 +344,39 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
 
     <!-- Optional JavaScript -->
     <script>
+        // var data = [
+        //     {
+        //         y: ['giraffes', 'orangutans', 'monkeys'],
+        //         x: [20, 14, 23],
+        //         type: 'bar',
+        //         orientation: 'h',
+        //         text: ['giraffes', 'orangutans', 'monkeys'],
+        //         textposition: 'auto'
+        //     }
+        // ];
+
+        // var layout = {
+        //     yaxis: {
+        //         autorange: true,
+        //         showgrid: false,
+        //         zeroline: false,
+        //         showline: false,
+        //         autotick: true,
+        //         ticks: '',
+        //         showticklabels: false
+        //     }
+        // }
+
+        // Plotly.newPlot('skills_plot', data, layout);
+
         let requestURL = "https://raw.githubusercontent.com/jrmistry/jrmistry.github.io/master/assets/profile.json";
         let request = new XMLHttpRequest();
-
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
 
         request.onload = function () {
             const data = request.response;
-            console.log(data);
-            console.log(data['education'].length);
 
             data['education'].forEach(rowItems => {
                 var table, row, rowCell, rowCellItem;
@@ -376,7 +413,6 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
                 if (rowItems["img"] == "") {
                     var img = ``;
                 } else {
-                    console.log(rowItems["img"]);
                     var img = `<img src="${rowItems["img"]}" class="card-img-top" alt="">`;
                 }
 
@@ -406,35 +442,15 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
             });
 
             data['contacts'].forEach(rowItems => {
-                var table, row, rowCell, rowCellItem, link, fab;
+                var table, row;
                 table = document.querySelector("#contacts_table_rows");
                 row = document.createElement("tr");
 
-                rowCell = document.createElement("th");
-                rowCell.scope = "row";
-                rowCellItem = document.createTextNode(rowItems["index"]);
-                rowCell.appendChild(rowCellItem);
-                row.appendChild(rowCell);
-
-                rowCell = document.createElement("td");
-                link = document.createElement("a");
-                link.href = rowItems["href"];
-                link.target = "_blank";
-                fab = document.createElement("i");
-                fab.className = rowItems["fab-class"];
-                link.appendChild(fab);
-                rowCell.appendChild(link);
-                row.appendChild(rowCell);
-
-                rowCell = document.createElement("td");
-                link = document.createElement("a");
-                link.href = rowItems["href"];
-                link.target = "_blank";
-                link.className = "text-break";
-                rowCellItem = document.createTextNode(rowItems["text"]);
-                link.appendChild(rowCellItem);
-                rowCell.append(link);
-                row.appendChild(rowCell);
+                row.innerHTML = `
+                <th scope="row">${rowItems["index"]}</th>
+                <td><a href="${rowItems["href"]}" target="_blank"><i class="${rowItems["fab-class"]}"></i></a></td>
+                <td><a href="${rowItems["href"]}" target="_blank" class="text-break">${rowItems["text"]}</a></td>
+                `;
 
                 table.appendChild(row);
             });
