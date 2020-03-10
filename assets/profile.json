@@ -243,7 +243,7 @@
             },
             {
                 "title": "How we made an AR App in 5 days",
-                "subtitle": "ECCE App Challenge",
+                "subtitle": "ECCE Blog",
                 "body": "Discussion of how my team and I made an Augmented Reality app using Esri's Runtime SDKs for AR/VR",
                 "date": "Apr 2019",
                 "location": "Waterloo, ON, Canada",
@@ -253,7 +253,7 @@
             },
             {
                 "title": "Machine Learning for Geospatial Data Workshop #2",
-                "subtitle": "Geospatial Club",
+                "subtitle": "UW Geospatial Club",
                 "body": "Run a workshop to teach 30+ students about basic ConvNN for image classification aerial imagery",
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
@@ -263,7 +263,7 @@
             },
             {
                 "title": "Machine Learning for Geospatial Data Workshop #1",
-                "subtitle": "Geospatial Club",
+                "subtitle": "UW Geospatial Club",
                 "body": "Run a workshop to teach 30+ students about machine learning and data science using geospatial data",
                 "date": " Feb 2019",
                 "location": "University of Waterloo",
