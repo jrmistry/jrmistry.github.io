@@ -314,10 +314,16 @@
              ******************************************************************/
 
             var app = {
+                // Map settings
                 basemap: 'satellite',
                 ground: "world-elevation",
+
+                // Scene settings
                 qualityProfile: "high",
                 viewingMode: "global",
+                date: "July 6, 2020 9:00:00 PST",
+
+                // Airplane settings
                 heightAboveGround: 1000,
                 duration: 1000,
                 flightSpeed: 40, // need
@@ -387,7 +393,7 @@
                         quality: "high"
                     },
                     lighting: {
-                        date: new Date("July 6, 2020 7:00:00 PST"),
+                        date: new Date(app.date),
                         directShadowsEnabled: true
                     }
                 }
