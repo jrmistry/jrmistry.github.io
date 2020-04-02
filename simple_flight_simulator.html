@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="Simple Flight Simulator by Jaydeep Mistry">
+
+    <title>Simple Flight Simulator</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #buttonsDiv {
+            position: absolute;
+            bottom: 28px;
+            left: 12px;
+            padding: 12px;
+            background-color: rgba(200, 200, 200, 0.5);
+            border: 1px solid black;
+        }
+
+        #indicatorSpan {
+            display: inline-block;
+            vertical-align: middle;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(100, 100, 100, 0.8);
+            border: 2px solid #ccc;
+        }
+    </style>
+
+    <!-- Calcite Maps Bootstrap -->
+    <link rel="stylesheet" href="https://esri.github.io/calcite-maps/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+
+    <!-- Calcite Maps -->
+    <link rel="stylesheet" href="https://esri.github.io/calcite-maps/dist/css/calcite-maps-arcgis-4.x.min-v0.10.css">
+
+    <!-- ArcGIS JS 4 -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css" />
+
+</head>
+
+<body class="calcite-maps calcite-nav-top">
+    <!-- Navbar -->
+
+    <nav class="navbar calcite-navbar navbar-fixed-top calcite-text-light calcite-bg-dark">
+        <!-- Menu -->
+        <div class="dropdown calcite-dropdown calcite-text-dark calcite-bg-light" role="presentation">
+            <a class="dropdown-toggle" role="menubutton" aria-haspopup="true" aria-expanded="false">
+                <div class="calcite-dropdown-toggle">
+                    <span class="sr-only">Toggle dropdown menu</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a role="menuitem" data-target="#panelInfo" aria-haspopup="true"><span
+                            class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                <li><a role="menuitem" data-target="#panelSettings" aria-haspopup="true"><span
+                            class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                <li><a role="menuitem" id="calciteToggleNavbar" aria-haspopup="true"><span
+                            class="glyphicon glyphicon-ban-circle"></span> Hide Navbar</a></li>
+            </ul>
+        </div>
+        <!-- Title -->
+        <div class="calcite-title calcite-overflow-hidden">
+            <span class="calcite-title-main">Simple Flight Simulator</span>
+            <span class="calcite-title-divider hidden-xs"></span>
+            <span class="calcite-title-sub hidden-xs">By <a style="color: white !important;" target="_blank"
+                    href="https://www.linkedin.com/in/jaydeep-mistry/">Jaydeep Mistry</a></span>
+        </div>
+    </nav>
+
+    <!--/.calcite-navbar -->
+
+    <!-- Map  -->
+
+    <div class="calcite-map calcite-map-absolute">
+        <div id="sceneViewDiv"></div>
+    </div>
+
+    <!-- /.calcite-map -->
+
+    <!-- Panels -->
+
+    <div class="calcite-panels calcite-panels-right calcite-text-light calcite-bg-dark panel-group"
+        aria-multiselectable="false">
+
+        <div id="panelInfo" class="panel collapse in">
+            <div id="headingInfo" class="panel-heading" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseInfo"
+                        aria-expanded="true" aria-controls="collapseInfo"><span class="glyphicon glyphicon-info-sign"
+                            aria-hidden="true"></span><span class="panel-label">About</span></a>
+                    <a class="panel-close" role="button" data-toggle="collapse" href="#panelInfo"><span
+                            class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseInfo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingInfo">
+                <div class="panel-body">
+                    <h3>Welcome to my </br>Simple Flight Simulator</h3>
+                    <h4>Made by: <a target="_blank" href="https://www.linkedin.com/in/jaydeep-mistry/">Jaydeep Mistry</a></h4>
+                    <p>
+                        On the left you can start/stop tracking the airplane.
+                    </p>
+                    <p>
+                        You can also search for a new source location or destination for the airplane. The default is to
+                        go from Glacier National Park to Banff.
+                    </p>
+                    <div class="form-horizontal calcite-form-padding">
+                        <div class="form-group">
+                            <label for="sourceName" class="col-xs-4 control-label">Start location:</label>
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" id="sourceName" value="Glacier National Park"
+                                    disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="destinationName" class="col-xs-4 control-label">Destination:</label>
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" id="destinationName" value="Banff, Alberta"
+                                    disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="panelSettings" class="panel collapse">
+            <div id="headingSettings" class="panel-heading" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseSettings"
+                        aria-expanded="true" aria-controls="collapseSettings"><span
+                            class="glyphicon glyphicon-cog" aria-hidden="true"></span><span
+                            class="panel-label">Settings</span></a>
+                    <a class="panel-close" role="button" data-toggle="collapse" href="#panelSettings"><span
+                            class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseSettings" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingInfo">
+                <div class="panel-body">
+                    <div class="calcite-form-title">Application Settings:</div>
+                    <div class="form-horizontal calcite-form-padding">
+                        <div class="form-group">
+                            <label for="option_camera_heading" class="col-xs-6 control-label">
+                                Camera Heading:
+                            </label>
+                            <div class="col-xs-6">
+                                <select id="option_camera_heading" class="form-control">
+                                    <option value="Auto">Auto</option>
+                                    <option value="Manual">Manual</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="option_camera_tilt" class="col-xs-6 control-label">
+                                Camera Tilt:
+                            </label>
+                            <div class="col-xs-6">
+                                <select id="option_camera_tilt" class="form-control">
+                                    <option value=0>0</option>
+                                    <option value=10>10</option>
+                                    <option value=20>20</option>
+                                    <option value=30>30</option>
+                                    <option value=40>40</option>
+                                    <option value=50>50</option>
+                                    <option value=60 selected>60</option>
+                                    <option value=70>70</option>
+                                    <option value=80>80</option>
+                                    <option value=-1>Manual</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="option_camera_distance" class="col-xs-6 control-label">
+                                Camera Follow Distance:
+                            </label>
+                            <div class="col-xs-6">
+                                <input type="number" class="form-control" id="option_camera_distance" min="1" max="6000" title="Range of 1 to 6000"
+                                    placeholder="1000" value="1000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="option_speed" class="col-xs-6 control-label">
+                                Airplane Speed (Meters/sec):
+                            </label>
+                            <div class="col-xs-6">
+                                <input type="number" class="form-control" id="option_speed" min="1" max="200" title="Range of 1 to 200"
+                                    placeholder="40" value="40">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="option_height" class="col-xs-6 control-label">
+                                Height above ground (Meters):
+                            </label>
+                            <div class="col-xs-6">
+                                <input type="number" class="form-control" id="option_height" min="10" max="12000" title="Range of 1 to 12000"
+                                    placeholder="1000" value="1000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.calcite-panels -->
+
+    <script type="text/javascript">
+        var dojoConfig = {
+            packages: [{
+                name: "bootstrap",
+                location: "https://esri.github.io/calcite-maps/dist/vendor/dojo-bootstrap"
+            },
+            {
+                name: "calcite-maps",
+                location: "https://esri.github.io/calcite-maps/dist/js/dojo"
+            },
+            {
+                name: "geolocate",
+                location: "https://2gis.github.io/mock-geolocation/dist",
+                main: "geolocate"
+            }
+            ]
+        };
+    </script>
+
+    <!-- ArcGIS JS 4 -->
+    <script src="https://js.arcgis.com/4.14/"></script>
+
+    <script>
+
+        require([
+            // Map
+            "esri/Map",
+            "esri/WebScene",
+            "esri/views/SceneView",
+
+            // Geometry
+            "esri/layers/FeatureLayer",
+            "esri/layers/ElevationLayer",
+            "esri/geometry/Point",
+            "esri/Graphic",
+            "esri/symbols/WebStyleSymbol",
+            "esri/geometry/support/webMercatorUtils",
+
+            // Widgets
+            "geolocate", // geolocation simulator (https://github.com/2gis/mock-geolocation)
+            "esri/widgets/Track",
+            "esri/widgets/Search",
+            "esri/widgets/Daylight",
+            "esri/widgets/Expand",
+            "esri/widgets/BasemapGallery",
+            "esri/widgets/Fullscreen",
+
+            // Bootstrap
+            "bootstrap/Collapse",
+            "bootstrap/Dropdown",
+
+            // Calcite Maps
+            "calcite-maps/calcitemaps-v0.10",
+            // Calcite Maps ArcGIS Support
+            "calcite-maps/calcitemaps-arcgis-support-v0.10",
+
+            "dojo/domReady!"
+        ], function (
+            // Map
+            Map,
+            WebScene,
+            SceneView,
+
+            // Geometry
+            FeatureLayer,
+            ElevationLayer,
+            Point,
+            Graphic,
+            WebStyleSymbol,
+            webMercatorUtils,
+
+
+            // Widgets
+            geolocate,
+            Track,
+            Search,
+            Daylight,
+            Expand,
+            BasemapGallery,
+            Fullscreen,
+
+            // Bootstrap
+            Collapse,
+            Dropdown,
+
+            // Calcite Maps
+            CalciteMaps,
+            // Calcite Maps ArcGIS Support
+            CalciteMapArcGISSupport
+        ) {
+
+            /******************************************************************
+             *
+             * App Global Settings
+             * 
+             ******************************************************************/
+
+            var app = {
+                basemap: 'satellite',
+                ground: "world-elevation",
+                qualityProfile: "high",
+                viewingMode: "global",
+                heightAboveGround: 1000,
+                duration: 1000,
+                flightSpeed: 40, // need
+                dist_btw_points: 100,
+                heading: 0
+            };
+
+            var sourceCoords = {
+                latitude: 48.696080000000045,
+                longitude: -113.80705999999998,
+                name: "Glacier National Park"
+            };
+
+            var destCoords = {
+                latitude: 51.17578000000003,
+                longitude: -115.57284999999996,
+                name: "Banff, Alberta"
+            };
+
+            var airplaneData = [
+                {
+                    OBJECTID: 3,
+                    LONGITUDE: sourceCoords.longitude,
+                    LATITUDE: sourceCoords.latitude,
+                    CATEGORY: "Airplane_Propeller",
+                    value: "Airplane_Propeller",
+                    NAME: "Airplane_Propeller",
+                    HEIGHT: app.heightAboveGround,
+                    ROTATION: 0,
+                    SIZE: 12
+                }
+            ];
+
+            /******************************************************************
+             *
+             * Create the scene
+             * 
+             ******************************************************************/
+
+            // Map
+            var scene = new WebScene({
+                basemap: app.basemap,
+                ground: app.ground
+            });
+
+            var sceneView = new SceneView({
+                container: "sceneViewDiv",
+                map: scene,
+                padding: {
+                    top: 50,
+                    bottom: 0
+                },
+                camera: {
+                    position: {
+                        longitude: sourceCoords.longitude,
+                        latitude: sourceCoords.latitude,
+                        z: app.heightAboveGround
+                    },
+                    fov: 120
+                },
+                qualityProfile: app.qualityProfile,
+                viewingMode: app.viewingMode,
+                environment: {
+                    starsEnabled: true,
+                    atmosphereEnabled: true,
+                    atmosphere: {
+                        quality: "high"
+                    },
+                    lighting: {
+                        date: new Date("July 6, 2020 7:00:00 PST"),
+                        directShadowsEnabled: true
+                    }
+                }
+            });
+
+            /******************************************************************
+             *
+             * Add widgets
+             * 
+             ******************************************************************/
+
+            // Track widget to follow airplane
+            var track = new Track({
+                view: sceneView,
+                graphic: new Graphic({
+                    symbol: {
+                        type: "simple-marker",
+                        size: 0
+                    }
+                }),
+                goToLocationEnabled: false // disable this since we want to control what happens after our location is acquired
+            });
+
+            sceneView.ui.add(track, "top-left");
+
+            // Search for new Airplane source coordinates widget
+            var searchWidgetSource = new Search({
+                view: sceneView,
+                allPlaceholder: "Find a starting location",
+                placeholder: "Find a starting location",
+                autoNavigate: false,
+            });
+
+            const expandSearchSource = new Expand({
+                expandIconClass: "esri-icon-search",
+                expandTooltip: "Search for a starting location",
+                view: sceneView,
+                content: searchWidgetSource,
+                expanded: false,
+            });
+
+            searchWidgetSource.on("select-result", function (searchResult) {
+                document.getElementById("sourceName").value = searchResult.result.name;
+
+                sourceCoords = searchResult.result.feature.geometry;
+            });
+
+            sceneView.ui.add(expandSearchSource, "top-left");
+
+            // Search for destination coordinates widget
+            var searchWidgetDestination = new Search({
+                view: sceneView,
+                allPlaceholder: "Find a destination",
+                placeholder: "Find a destination",
+                autoNavigate: false,
+            });
+
+            const expandSearchDestination = new Expand({
+                expandIconClass: "esri-icon-search",
+                expandTooltip: "Search for a destination",
+                view: sceneView,
+                content: searchWidgetDestination,
+                expanded: false,
+            });
+
+            searchWidgetDestination.on("select-result", function (searchResult) {
+                document.getElementById("destinationName").value = searchResult.result.name;
+
+                destCoords = searchResult.result.feature.geometry;
+            });
+
+            sceneView.ui.add(expandSearchDestination, "top-left");
+
+            // Adjust default widgets
+            sceneView.ui.move(["zoom", "navigation-toggle", "compass"], "bottom-right");
+
+            sceneView.ui.remove(["zoom", "navigation-toggle"]);
+
+            // Full Screen Widget
+            fullscreen = new Fullscreen({
+                view: sceneView
+            });
+
+            sceneView.ui.add(fullscreen, "bottom-right");
+
+            // Daylight Controls Widget
+            const daylightWidget = new Daylight({
+                view: sceneView,
+                playSpeedMultiplier: 0.5,
+                visibleElements: {
+                    timezone: false
+                }
+            });
+
+            const expandDayLight = new Expand({
+                expandIconClass: "esri-icon-time-clock",
+                expandTooltip: "Expand daylight widget",
+                view: sceneView,
+                content: daylightWidget,
+                expanded: false
+            });
+
+            sceneView.ui.add(expandDayLight, "bottom-right");
+
+            // Basemap Gallery Widget
+            var basemapGallery = new BasemapGallery({
+                view: sceneView
+            });
+
+            const expandBasemapGallery = new Expand({
+                expandIconClass: "esri-icon-basemap",
+                expandTooltip: "Expand basemap widget",
+                view: sceneView,
+                content: basemapGallery,
+                expanded: false
+            });
+
+            sceneView.ui.add(expandBasemapGallery, "bottom-right");
+
+            /******************************************************************
+             *
+             * Create Airplane Feature Layer
+             * 
+             ******************************************************************/
+
+            var airplaneLayer = new FeatureLayer({
+                title: "Airplane",
+                fields: [
+                    {
+                        name: "OBJECTID",
+                        alias: "ObjectID",
+                        type: "oid"
+                    }, {
+                        name: "x",
+                        alias: "x",
+                        type: "double"
+                    }, {
+                        name: "y",
+                        alias: "y",
+                        type: "double"
+                    }, {
+                        name: "z",
+                        alias: "z",
+                        type: "double"
+                    },
+                    {
+                        name: "NAME",
+                        alias: "NAME",
+                        type: "string"
+                    },
+                    {
+                        name: "CATEGORY",
+                        alias: "CATEGORY",
+                        type: "string"
+                    },
+                    {
+                        name: "ROTATION",
+                        alias: "ROTATION",
+                        type: "double"
+                    },
+                    {
+                        name: "SIZE",
+                        alias: "SIZE",
+                        type: "integer"
+                    },
+                    {
+                        name: "HEIGHT",
+                        alias: "HEIGHT",
+                        type: "integer"
+                    }
+                ],
+                objectIdField: "OBJECTID",
+                geometryType: "point",
+                spatialReference: { wkid: 4326 },
+                hasZ: true,
+                elevationInfo: {
+                    mode: "relative-to-ground",
+                    unit: "meters",
+                    offset: 0,
+                },
+                source: [], // implies an empty Feature layer with no features
+                renderer: {
+                    type: "unique-value",
+                    field: "CATEGORY",
+                    uniqueValueInfos: [
+                        {
+                            value: "Airplane_Propeller",
+                            symbol: {
+                                type: "web-style",
+                                name: "Airplane_Propeller",
+                                portal: { url: "https://www.arcgis.com" },
+                                styleName: "EsriRealisticTransportationStyle"
+                            }
+                        }
+                    ],
+                    visualVariables: [
+                        {
+                            type: "rotation",
+                            field: "ROTATION"
+                        },
+                        {
+                            type: "size",
+                            field: "SIZE",
+                            axis: "depth"
+                        }
+                    ]
+                }
+            });
+
+            scene.add(airplaneLayer);
+
+            /******************************************************************
+            *
+            * Populate airplane Feature layer
+            * 
+            ******************************************************************/
+
+            var graphic, graphics = [];
+
+            for (var i = 0; i < airplaneData.length; i++) {
+                graphic = new Graphic({
+                    geometry: {
+                        type: "point",
+                        y: airplaneData[i].LATITUDE,
+                        x: airplaneData[i].LONGITUDE,
+                        z: airplaneData[i].HEIGHT
+                    },
+                    attributes: airplaneData[i]
+                });
+                graphics.push(graphic);
+            };
+
+            var edits = {
+                addFeatures: graphics
+            };
+
+            airplaneLayer.applyEdits(edits).then(function (results) {
+                // console.log("results:", results);
+            });
+
+            /******************************************************************
+             *
+             * Setup helper functions and services
+             * 
+             ******************************************************************/
+
+            // Create elevation layers
+            // this is to calculate elevation of airplane relative to ground on the fly
+            var beforeLandslideUrl =
+                "//elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer/";
+
+            var elevationLayer = new ElevationLayer({
+                url: beforeLandslideUrl
+            });
+
+            // function to get angle between two points
+            function getHeading(point, oldPoint) {
+                var angleInDegrees = (
+                    Math.atan2(
+                        point.y - oldPoint.y,
+                        point.x - oldPoint.x
+                    ) * 180) / Math.PI;
+
+                // move heading north
+                return -90 + angleInDegrees;
+            }
+
+            // returns a point between two points with a distance offset
+            // requires lat/lng points, returns lat/lng point
+            // uses X/Y meter calculations with distance offset in meters
+            function getPointAfterOffset(p1, p2, distance) {
+                var p1xy = {
+                    x: webMercatorUtils.lngLatToXY(p1.longitude, p1.latitude)[0],
+                    y: webMercatorUtils.lngLatToXY(p1.longitude, p1.latitude)[1]
+                };
+
+                var p2xy = {
+                    x: webMercatorUtils.lngLatToXY(p2.longitude, p2.latitude)[0],
+                    y: webMercatorUtils.lngLatToXY(p2.longitude, p2.latitude)[1]
+                };
+
+                app.dist_btw_points = Math.sqrt(Math.pow(p2xy.x - p1xy.x, 2) + Math.pow(p2xy.y - p1xy.y, 2));
+
+                var distance_ratio = distance / app.dist_btw_points;
+
+                var x = p1xy.x + distance_ratio * (p2xy.x - p1xy.x);
+                var y = p1xy.y + distance_ratio * (p2xy.y - p1xy.y);
+
+
+                return {
+                    latitude: webMercatorUtils.xyToLngLat(x, y)[1],
+                    longitude: webMercatorUtils.xyToLngLat(x, y)[0]
+                }
+            };
+
+            // function designed to get a random float number between two numbers
+            // min is inclusive, max is exclusive
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            /******************************************************************
+             *
+             * Setup airplane tracking when Scene is ready
+             * 
+             ******************************************************************/
+
+            var changeTrackTitle = true;
+
+            // Popup and panel sync
+            sceneView.when(function () {
+                CalciteMapArcGISSupport.setPopupPanelSync(sceneView);
+
+                sceneView.goTo({
+                    tilt: 80
+                });
+
+                var prevLocation = sceneView.center;
+
+                track.on("track", function (trackEvent) {
+
+                    if (changeTrackTitle) {
+                        document.getElementsByClassName("esri-track")[0].title = "Track the airplane";
+                        changeTrackTitle = false;
+                    };
+
+                    var point = {
+                        type: "point",
+                        latitude: sourceCoords.latitude,
+                        longitude: sourceCoords.longitude
+                    }
+
+                    elevationLayer.queryElevation(new Point(point), { returnSampleInfo: true }).then(function (elevation) {
+                        elevation.geometry.z += app.heightAboveGround;
+
+                        var sceneTarget = {
+                            center: elevation.geometry,
+                            scale: Number(document.getElementById("option_camera_distance").value),
+                        };
+
+                        var option_camera_heading = document.getElementById("option_camera_heading");
+                        var option_camera_heading_value = option_camera_heading.options[option_camera_heading.selectedIndex].value;
+
+                        if (option_camera_heading_value == "Auto") {
+                            sceneTarget.heading = app.heading
+                        };
+
+                        var option_camera_tilt = document.getElementById("option_camera_tilt");
+                        var option_camera_tilt_value = option_camera_tilt.options[option_camera_tilt.selectedIndex].value;
+
+                        if (option_camera_tilt_value >= 0) {
+                            sceneTarget.tilt = option_camera_tilt_value
+                        };
+
+                        sceneView.goTo(sceneTarget, {
+                            duration: app.duration,
+                            maxDuration: app.duration,
+                            easing: "linear"
+                        });
+                    });
+                });
+
+                track.start();
+            });
+
+            /******************************************************************
+             *
+             * Setup and update airplane location every duration (1 second)
+             * 
+             ******************************************************************/
+
+            // geolocation simulator
+            function stubGeolocation() {
+                geolocate.use();
+
+                setInterval(function () {
+                    app.heightAboveGround = Number(document.getElementById("option_height").value);
+                    app.flightSpeed = Number(document.getElementById("option_speed").value);
+
+                    if (app.dist_btw_points < app.flightSpeed) {
+                        // in the event the airplane reaches the destination,
+                        // change destination to a random point
+                        destCoords = {
+                            latitude: getRandomArbitrary(-90, 90),
+                            longitude: getRandomArbitrary(-180, 180)
+                        }
+                    };
+
+                    var point = getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed);
+
+                    app.heading = 360 - getHeading({
+                        y: point.latitude,
+                        x: point.longitude
+                    }, {
+                        y: sourceCoords.latitude,
+                        x: sourceCoords.longitude
+                    });
+
+
+
+                    airplaneLayer.queryFeatures().then(function (results) {
+
+                        app.heading = 360 - getHeading({
+                            y: getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).latitude,
+                            x: getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).longitude
+                        }, {
+                            y: results.features[0].geometry.y,
+                            x: results.features[0].geometry.x
+                        });
+
+                        results.features[0].geometry.x = getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).longitude;
+                        results.features[0].geometry.y = getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).latitude;
+                        results.features[0].geometry.z = app.heightAboveGround;
+                        results.features[0].attributes.ROTATION = app.heading;
+
+                        var coords = {
+                            lat: results.features[0].geometry.y,
+                            lng: results.features[0].geometry.x,
+                        };
+
+                        sourceCoords.latitude = coords.lat;
+                        sourceCoords.longitude = coords.lng;
+
+                        geolocate.change(coords);
+
+                        edits = {
+                            updateFeatures: results.features,
+                        };
+                        airplaneLayer.applyEdits(edits);
+                    });
+                }, app.duration);
+            }
+
+            // geolocation simulator
+            stubGeolocation();
+        });
+    </script>
+
+</body>
+
+</html>
