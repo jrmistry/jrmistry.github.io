@@ -16,24 +16,6 @@
             height: 100%;
             width: 100%;
         }
-
-        #buttonsDiv {
-            position: absolute;
-            bottom: 28px;
-            left: 12px;
-            padding: 12px;
-            background-color: rgba(200, 200, 200, 0.5);
-            border: 1px solid black;
-        }
-
-        #indicatorSpan {
-            display: inline-block;
-            vertical-align: middle;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(100, 100, 100, 0.8);
-            border: 2px solid #ccc;
-        }
     </style>
 
     <!-- Calcite Maps Bootstrap -->
@@ -108,27 +90,32 @@
             <div id="collapseInfo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingInfo">
                 <div class="panel-body">
                     <h3>Welcome to my </br>Simple Flight Simulator</h3>
-                    <h4>Made by: <a target="_blank" href="https://www.linkedin.com/in/jaydeep-mistry/">Jaydeep Mistry</a></h4>
+                    <h5 style="margin-bottom: 20px;">Made by: <a target="_blank"
+                            href="https://www.linkedin.com/in/jaydeep-mistry/">Jaydeep Mistry</a></h5>
                     <p>
                         On the left you can start/stop tracking the airplane.
                     </p>
                     <p>
-                        You can also search for a new source location or destination for the airplane. The default is to
-                        go from Glacier National Park to Banff.
+                        There are also two search Widgets that you can use to change the starting location or
+                        destination for the airplane respectively. The default is to
+                        go from Palm Springs to San Diego.
+                    </p>
+                    <p>
+                        Please note: Smooth animations for the airplane to travel between points is not yet available, but
+                        will be implemented in the future versions of the <a target="_blank"
+                            href="https://developers.arcgis.com/javascript/">ArcGIS JS API</a>. You can open settings from the menu to make changes.
                     </p>
                     <div class="form-horizontal calcite-form-padding">
                         <div class="form-group">
                             <label for="sourceName" class="col-xs-4 control-label">Start location:</label>
                             <div class="col-xs-8">
-                                <input type="text" class="form-control" id="sourceName" value="Glacier National Park"
-                                    disabled>
+                                <input type="text" class="form-control" id="sourceName" value="Palm Springs" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="destinationName" class="col-xs-4 control-label">Destination:</label>
                             <div class="col-xs-8">
-                                <input type="text" class="form-control" id="destinationName" value="Banff, Alberta"
-                                    disabled>
+                                <input type="text" class="form-control" id="destinationName" value="San Diego" disabled>
                             </div>
                         </div>
                     </div>
@@ -140,20 +127,19 @@
             <div id="headingSettings" class="panel-heading" role="tab">
                 <div class="panel-title">
                     <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseSettings"
-                        aria-expanded="true" aria-controls="collapseSettings"><span
-                            class="glyphicon glyphicon-cog" aria-hidden="true"></span><span
-                            class="panel-label">Settings</span></a>
+                        aria-expanded="true" aria-controls="collapseSettings"><span class="glyphicon glyphicon-cog"
+                            aria-hidden="true"></span><span class="panel-label">Settings</span></a>
                     <a class="panel-close" role="button" data-toggle="collapse" href="#panelSettings"><span
                             class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
                 </div>
             </div>
             <div id="collapseSettings" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingInfo">
                 <div class="panel-body">
-                    <div class="calcite-form-title">Application Settings:</div>
+                    <div class="calcite-form-title">App Settings:</div>
                     <div class="form-horizontal calcite-form-padding">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="option_camera_heading" class="col-xs-6 control-label">
-                                Camera Heading:
+                                Camera Heading Angle
                             </label>
                             <div class="col-xs-6">
                                 <select id="option_camera_heading" class="form-control">
@@ -161,10 +147,28 @@
                                     <option value="Manual">Manual</option>
                                 </select>
                             </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="option_camera_heading" class="col-xs-6 control-label">
+                                Camera Heading Rotation (degrees)
+                            </label>
+                            <div class="col-xs-6">
+                                <select id="option_camera_heading" class="form-control">
+                                    <option value=-135>-135</option>
+                                    <option value=-90>-90</option>
+                                    <option value=-45>-45</option>
+                                    <option value=0 selected>0</option>
+                                    <option value=45>45</option>
+                                    <option value=90>90</option>
+                                    <option value=135>135</option>
+                                    <option value=180>180</option>
+                                    <option value=-1>Manual</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="option_camera_tilt" class="col-xs-6 control-label">
-                                Camera Tilt:
+                                Camera Tilt (degrees)
                             </label>
                             <div class="col-xs-6">
                                 <select id="option_camera_tilt" class="form-control">
@@ -174,8 +178,8 @@
                                     <option value=30>30</option>
                                     <option value=40>40</option>
                                     <option value=50>50</option>
-                                    <option value=60 selected>60</option>
-                                    <option value=70>70</option>
+                                    <option value=60>60</option>
+                                    <option value=70 selected>70</option>
                                     <option value=80>80</option>
                                     <option value=-1>Manual</option>
                                 </select>
@@ -183,29 +187,29 @@
                         </div>
                         <div class="form-group">
                             <label for="option_camera_distance" class="col-xs-6 control-label">
-                                Camera Follow Distance:
+                                Camera Follow Distance (meters)
                             </label>
                             <div class="col-xs-6">
-                                <input type="number" class="form-control" id="option_camera_distance" min="1" max="6000" title="Range of 1 to 6000"
-                                    placeholder="1000" value="1000">
+                                <input type="number" class="form-control" id="option_camera_distance" step=10
+                                    title="Typical range of 500 to 6000" min=200 step=10 placeholder=1000 value=1000>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="option_speed" class="col-xs-6 control-label">
-                                Airplane Speed (Meters/sec):
+                                Airplane Speed (meters/sec)
                             </label>
                             <div class="col-xs-6">
-                                <input type="number" class="form-control" id="option_speed" min="1" max="200" title="Range of 1 to 200"
-                                    placeholder="40" value="40">
+                                <input type="number" class="form-control" id="option_speed" min=0 step=10
+                                    title="Typical range of 30 to 200" placeholder=40 value=40>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="option_height" class="col-xs-6 control-label">
-                                Height above ground (Meters):
+                                Height above ground (meters)
                             </label>
                             <div class="col-xs-6">
-                                <input type="number" class="form-control" id="option_height" min="10" max="12000" title="Range of 1 to 12000"
-                                    placeholder="1000" value="1000">
+                                <input type="number" class="form-control" id="option_height" min=10 step=10
+                                    title="Typical Range of 100 to 12000" placeholder=1000 value=1000>
                             </div>
                         </div>
                     </div>
@@ -261,6 +265,7 @@
             "esri/widgets/Daylight",
             "esri/widgets/Expand",
             "esri/widgets/BasemapGallery",
+            "esri/widgets/BasemapGallery/support/PortalBasemapsSource",
             "esri/widgets/Fullscreen",
 
             // Bootstrap
@@ -295,6 +300,7 @@
             Daylight,
             Expand,
             BasemapGallery,
+            PortalBasemapsSource,
             Fullscreen,
 
             // Bootstrap
@@ -315,7 +321,7 @@
 
             var app = {
                 // Map settings
-                basemap: 'satellite',
+                basemap: 'hybrid',
                 ground: "world-elevation",
 
                 // Scene settings
@@ -332,15 +338,15 @@
             };
 
             var sourceCoords = {
-                latitude: 48.696080000000045,
-                longitude: -113.80705999999998,
-                name: "Glacier National Park"
+                latitude: 33.83245620935254,
+                longitude: -116.51140704464498,
+                name: "Palm Springs, California"
             };
 
             var destCoords = {
-                latitude: 51.17578000000003,
-                longitude: -115.57284999999996,
-                name: "Banff, Alberta"
+                latitude: 32.71568000000007,
+                longitude: -117.16170999999999,
+                name: "San Diego, California"
             };
 
             var airplaneData = [
@@ -353,7 +359,7 @@
                     NAME: "Airplane_Propeller",
                     HEIGHT: app.heightAboveGround,
                     ROTATION: 0,
-                    SIZE: 12
+                    SIZE: 10
                 }
             ];
 
@@ -424,6 +430,7 @@
                 view: sceneView,
                 allPlaceholder: "Find a starting location",
                 placeholder: "Find a starting location",
+                locationEnabled: false,
                 autoNavigate: false,
             });
 
@@ -436,6 +443,8 @@
             });
 
             searchWidgetSource.on("select-result", function (searchResult) {
+                console.log(searchResult);
+
                 document.getElementById("sourceName").value = searchResult.result.name;
 
                 sourceCoords = searchResult.result.feature.geometry;
@@ -448,6 +457,7 @@
                 view: sceneView,
                 allPlaceholder: "Find a destination",
                 placeholder: "Find a destination",
+                locationEnabled: false,
                 autoNavigate: false,
             });
 
@@ -460,6 +470,8 @@
             });
 
             searchWidgetDestination.on("select-result", function (searchResult) {
+                console.log(searchResult);
+
                 document.getElementById("destinationName").value = searchResult.result.name;
 
                 destCoords = searchResult.result.feature.geometry;
@@ -499,8 +511,15 @@
             sceneView.ui.add(expandDayLight, "bottom-right");
 
             // Basemap Gallery Widget
+            // var source = new PortalBasemapsSource({
+            //     query: {
+            //         title: "basemap",
+            //     }
+            // });
+
             var basemapGallery = new BasemapGallery({
-                view: sceneView
+                view: sceneView,
+                // source: source
             });
 
             const expandBasemapGallery = new Expand({
@@ -722,8 +741,10 @@
 
                     var point = {
                         type: "point",
-                        latitude: sourceCoords.latitude,
-                        longitude: sourceCoords.longitude
+                        latitude: getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).latitude,
+                        longitude: getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).longitude,
+                        // latitude: sourceCoords.latitude,
+                        // longitude: sourceCoords.longitude
                     }
 
                     elevationLayer.queryElevation(new Point(point), { returnSampleInfo: true }).then(function (elevation) {
@@ -735,10 +756,10 @@
                         };
 
                         var option_camera_heading = document.getElementById("option_camera_heading");
-                        var option_camera_heading_value = option_camera_heading.options[option_camera_heading.selectedIndex].value;
+                        var option_camera_heading_value = Number(option_camera_heading.options[option_camera_heading.selectedIndex].value);
 
-                        if (option_camera_heading_value == "Auto") {
-                            sceneTarget.heading = app.heading
+                        if (option_camera_heading_value != -1) {
+                            sceneTarget.heading = app.heading + option_camera_heading_value;
                         };
 
                         var option_camera_tilt = document.getElementById("option_camera_tilt");
@@ -780,6 +801,7 @@
                             latitude: getRandomArbitrary(-90, 90),
                             longitude: getRandomArbitrary(-180, 180)
                         }
+                        document.getElementById("sourceName").value = document.getElementById("destinationName").value;
                         document.getElementById("destinationName").value = "Random";
                     };
 
@@ -793,16 +815,14 @@
                         x: sourceCoords.longitude
                     });
 
-
-
                     airplaneLayer.queryFeatures().then(function (results) {
 
                         app.heading = 360 - getHeading({
                             y: getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).latitude,
                             x: getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).longitude
                         }, {
-                            y: results.features[0].geometry.y,
-                            x: results.features[0].geometry.x
+                            y: results.features[0].geometry.latitude,
+                            x: results.features[0].geometry.longitude
                         });
 
                         results.features[0].geometry.x = getPointAfterOffset(sourceCoords, destCoords, app.flightSpeed).longitude;
@@ -811,8 +831,8 @@
                         results.features[0].attributes.ROTATION = app.heading;
 
                         var coords = {
-                            lat: results.features[0].geometry.y,
-                            lng: results.features[0].geometry.x,
+                            lat: results.features[0].geometry.latitude,
+                            lng: results.features[0].geometry.longitude,
                         };
 
                         sourceCoords.latitude = coords.lat;
@@ -832,7 +852,6 @@
             stubGeolocation();
         });
     </script>
-
 </body>
 
 </html>
