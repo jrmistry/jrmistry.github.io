@@ -38,25 +38,25 @@
     ],
     "contacts": [
         {
-            "index": 0,
+            "index": 1,
             "fab-class": "fab fa-linkedin fa-3x",
             "href": "https://www.linkedin.com/in/jaydeep-mistry/",
             "text": "linkedin.com/in/jaydeep-mistry"
         },
         {
-            "index": 1,
+            "index": 2,
             "fab-class": "fab fa-twitter-square fa-3x",
             "href": "https://twitter.com/Jaydeep__Mistry",
             "text": "twitter.com/Jaydeep__Mistry"
         },
         {
-            "index": 2,
+            "index": 3,
             "fab-class": "fab fa-kaggle fa-3x",
             "href": "https://www.kaggle.com/jrmistry",
             "text": "kaggle.com/jrmistry"
         },
         {
-            "index": 3,
+            "index": 4,
             "fab-class": "fab fa-github-square fa-3x",
             "href": "https://github.com/jrmistry",
             "text": "github.com/jrmistry"
@@ -66,42 +66,82 @@
         "tags": [
             {
                 "index": 0,
+                "tag": "card-highlights",
+                "text": "Highlights"
+            },{
+                "index": 1,
                 "tag": "card-work",
                 "text": "Work"
             },
             {
-                "index": 1,
+                "index": 2,
                 "tag": "card-blog",
                 "text": "Blog"
             },
             {
-                "index": 2,
+                "index": 3,
                 "tag": "card-projects",
                 "text": "Projects"
             },
             {
-                "index": 2,
+                "index": 4,
                 "tag": "card-volunteering",
                 "text": "Volunteering"
             },
             {
-                "index": 3,
+                "index": 5,
                 "tag": "card-conference",
                 "text": "Conferences"
             },
             {
-                "index": 4,
+                "index": 6,
                 "tag": "card-data-science",
                 "text": "Data Science"
             },
             {
-                "index": 5,
+                "index": 7,
                 "tag": "card-gis",
                 "text": "GIS"
             }
         ],
         "cards": [
             {
+                "title": "",
+                "subtitle": "",
+                "body": "",
+                "date": "",
+                "location": "",
+                "img": "",
+                "url": "",
+                "tags": ""
+            },{
+                "title": "COVID-19 Global Health Status Dashboard",
+                "subtitle": "ArcGIS Online Dashboard",
+                "body": "An AGOL dashboard made to highlight the health status proportion of COVID-19 cases per country",
+                "date": "Apr 2020",
+                "location": "Toronto, ON, Canada",
+                "img": "assets/imgs/jrmistry.github.io_COVID-19-Global-Health-Status-Dashboard.html.png",
+                "url": "https://jrmistry.github.io/COVID-19-Global-Health-Status-Dashboard",
+                "tags": "card-highlights card-projects card-gis"
+            },{
+                "title": "COVID-19 Regional Health Tracker",
+                "subtitle": "ArcGIS Online Dashboard",
+                "body": "An AGOL dashboard made to highlight the COVID-19 cases for the smallest subdivisions of USA & Canada",
+                "date": "Mar 2020",
+                "location": "Toronto, ON, Canada",
+                "img": "assets/imgs/jrmistry.github.io_COVID-19-Regional-Health-Tracker.html(iPad).png",
+                "url": "https://jrmistry.github.io/COVID-19-Regional-Health-Tracker",
+                "tags": "card-highlights card-projects card-gis"
+            },{
+                "title": "Simple Flight Simulator",
+                "subtitle": "3D GIS Project",
+                "body": "Made a simple flight simulator showing an airplane you can control that travels around the world!",
+                "date": "Mar 2020",
+                "location": "Toronto, ON, Canada",
+                "img": "assets/imgs/jrmistry.github.io_simple_flight_simulator.png",
+                "url": "https://jrmistry.github.io/simple_flight_simulator",
+                "tags": "card-projects card-gis"
+            },{
                 "title": "GISinEd2020 Conference",
                 "subtitle": "Esri Canada",
                 "body": "Attended the GIS in Education conference to learn how to natively use Jupyter Notebooks in ArcGIS Pro",
@@ -119,7 +159,7 @@
                 "location": "Toronto, ON, Canada",
                 "img": "assets/imgs/TPS_Interview_Notebook.png",
                 "url": "https://www.kaggle.com/jrmistry/plotly-mapbox-tps-data-analyst-interview-notes",
-                "tags": "card-blog card-data-science card-gis"
+                "tags": "card-highlights card-blog card-data-science card-gis"
             },
             {
                 "title": "Completed my Master in Geography",
@@ -129,7 +169,7 @@
                 "location": "Waterloo, ON, Canada",
                 "img": "assets/imgs/Map_Global_Connections_2.png",
                 "url": "https://www.linkedin.com/posts/jaydeep-mistry_masters-geography-activity-6638151914104205312-B0fU",
-                "tags": "card-projects card-python card-gis"
+                "tags": "card-highlights card-projects card-python card-gis"
             },
             {
                 "title": "How to create diverging stacked bar charts",
@@ -189,7 +229,7 @@
                 "location": "Waterloo, ON, Canada",
                 "img": "https://pbs.twimg.com/media/EAVo3mSWkAAeg5W?format=jpg&name=4096x4096",
                 "url": "https://twitter.com/Jaydeep__Mistry/status/1151222423825653760?s=20",
-                "tags": "card-projects card-gis"
+                "tags": "card-highlights card-projects card-gis"
             },
             {
                 "title": "University of Waterloo Liaison",
@@ -299,7 +339,7 @@
                 "location": "Waterloo, ON, Canada",
                 "img": "assets/imgs/esricanada-ce.github.io_ecce-app-challenge-2018_Water3D_app_(iPad).png",
                 "url": "https://esricanada-ce.github.io/appchallenge/2018/teams/uw/Water3D/",
-                "tags": "card-projects card-gis"
+                "tags": "card-highlights card-projects card-gis"
             },
             {
                 "title": "2nd Place in the ECCE App Challenge",
@@ -309,7 +349,7 @@
                 "location": "Waterloo, ON, Canada",
                 "img": "assets/imgs/esricanada-ce.github.io_ecce-app-challenge-2017_Team_Earth_Link_app_(iPad).png",
                 "url": "https://esricanada-ce.github.io/appchallenge/2017/teams/uw/Team_Earth_Link/",
-                "tags": "card-projects card-gis"
+                "tags": "card-highlights card-projects card-gis"
             },
             {
                 "title": "GIS Analyst",
@@ -319,7 +359,7 @@
                 "location": "Toronto, ON, Canada",
                 "img": "",
                 "url": "https://esri.ca/en/programs/the-community-map-of-canada",
-                "tags": "card-work card-gis"
+                "tags": "card-highlights card-work card-gis"
             },
             {
                 "title": "Junior Land Use Change Analyst",
@@ -350,16 +390,6 @@
                 "img": "",
                 "url": "https://www.aecl.ca/",
                 "tags": "card-work"
-            },
-            {
-                "title": "",
-                "subtitle": "",
-                "body": "",
-                "date": "",
-                "location": "",
-                "img": "",
-                "url": "",
-                "tags": ""
             }
         ]
     }
