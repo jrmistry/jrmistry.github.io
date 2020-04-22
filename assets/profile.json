@@ -66,40 +66,44 @@
         "tags": [
             {
                 "index": 0,
+                "tag": "card-all",
+                "text": "Show All"
+            },{
+                "index": 1,
                 "tag": "card-highlights",
                 "text": "Highlights"
             },{
-                "index": 1,
+                "index": 2,
                 "tag": "card-work",
                 "text": "Work"
             },
             {
-                "index": 2,
+                "index": 3,
                 "tag": "card-blog",
                 "text": "Blog"
             },
             {
-                "index": 3,
+                "index": 4,
                 "tag": "card-projects",
                 "text": "Projects"
             },
             {
-                "index": 4,
+                "index": 5,
                 "tag": "card-volunteering",
                 "text": "Volunteering"
             },
             {
-                "index": 5,
+                "index": 6,
                 "tag": "card-conference",
                 "text": "Conferences"
             },
             {
-                "index": 6,
+                "index": 7,
                 "tag": "card-data-science",
                 "text": "Data Science"
             },
             {
-                "index": 7,
+                "index": 8,
                 "tag": "card-gis",
                 "text": "GIS"
             }
