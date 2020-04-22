@@ -2,8 +2,8 @@
     "education": [
         {
             "index": 0,
-            "subject": "Geography",
-            "degree": "Graduate Masters",
+            "subject": "Master of Geography",
+            "degree": "Graduate Thesis",
             "school": "University of Waterloo",
             "year": "2020"
         },
@@ -163,7 +163,7 @@
                 "location": "Toronto, ON, Canada",
                 "img": "assets/imgs/TPS_Interview_Notebook.png",
                 "url": "https://www.kaggle.com/jrmistry/plotly-mapbox-tps-data-analyst-interview-notes",
-                "tags": "card-highlights card-blog card-data-science card-gis"
+                "tags": "card-blog card-data-science card-gis"
             },
             {
                 "title": "Completed my Master in Geography",

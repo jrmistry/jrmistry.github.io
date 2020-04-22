@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- Load plotly.js into the DOM -->
-    <!-- <script src='https://cdn.plot.ly/plotly-latest.min.js'></script> -->
-
     <title>Jaydeep Mistry</title>
 
     <style>
@@ -290,10 +287,6 @@
 
                         <div id="experience_filters" class="btn-group-toggle" data-toggle="buttons">
                             Filters:
-                            <label class="btn btn-outline-primary border-0 mb-2 active">
-                                <input type="radio" name="options" id="option1" onclick="filterSelection('all')"
-                                    checked>Show All
-                            </label>
                         </div>
                     </div>
 
@@ -344,30 +337,25 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
 
     <!-- Optional JavaScript -->
     <script>
-        // var data = [
-        //     {
-        //         y: ['giraffes', 'orangutans', 'monkeys'],
-        //         x: [20, 14, 23],
-        //         type: 'bar',
-        //         orientation: 'h',
-        //         text: ['giraffes', 'orangutans', 'monkeys'],
-        //         textposition: 'auto'
-        //     }
-        // ];
+        function filterSelection(tag) {
+            var card, cards, index, alreadyHidden;
+            cards = document.getElementsByClassName("card-experience");
 
-        // var layout = {
-        //     yaxis: {
-        //         autorange: true,
-        //         showgrid: false,
-        //         zeroline: false,
-        //         showline: false,
-        //         autotick: true,
-        //         ticks: '',
-        //         showticklabels: false
-        //     }
-        // }
+            for (index = 0; index < cards.length; index++) {
+                card = cards[index];
+                alreadyHidden = card.classList.contains("d-none");
 
-        // Plotly.newPlot('skills_plot', data, layout);
+                if ((tag == "card-all") || (card.classList.contains(tag))) {
+                    if (alreadyHidden) {
+                        card.classList.remove("d-none");
+                    };
+                } else {
+                    if (!alreadyHidden) {
+                        card.classList.add("d-none");
+                    };
+                };
+            };
+        };
 
         let requestURL = "https://raw.githubusercontent.com/jrmistry/jrmistry.github.io/master/assets/profile.json";
         let request = new XMLHttpRequest();
@@ -383,62 +371,15 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
                 table = document.querySelector("#education_table_rows");
                 row = document.createElement("tr");
 
-                Object.keys(rowItems).forEach(key => {
-                    rowCell = document.createElement("td");
-                    if (key == "index") {
-                        rowCell = document.createElement("th");
-                    };
-                    rowCell.scope = "row";
-                    rowCellItem = document.createTextNode(rowItems[key]);
-                    rowCell.appendChild(rowCellItem);
-                    row.appendChild(rowCell);
-                });
+                row.innerHTML = `
+                <th scope="row">${rowItems["index"]}</th>
+                <td scope="row">${rowItems["subject"]}</td>
+                <td scope="row">${rowItems["degree"]}</td>
+                <td scope="row">${rowItems["school"]}</td>
+                <td scope="row">${rowItems["year"]}</td>
+                `;
 
                 table.appendChild(row);
-            });
-
-            data['experiences']['tags'].forEach(rowItems => {
-                var label = document.createElement("label");
-                label.setAttribute("class", "btn btn-outline-primary border-0 mb-2");
-                label.innerHTML = `
-                <input id="${"filter_" + rowItems["text"]}" 
-                       type="radio"
-                       name="options"
-                       onclick="filterSelection('${rowItems["tag"]}')"
-                >${rowItems["text"]}`;
-                document.getElementById("experience_filters").appendChild(label);
-            });
-
-            data['experiences']['cards'].forEach(rowItems => {
-                if (rowItems["img"] == "") {
-                    var img = ``;
-                } else {
-                    var img = `<img src="${rowItems["img"]}" class="card-img-top" alt="">`;
-                }
-
-                if (rowItems["url"] == "") {
-                    var url = ``;
-                } else {
-                    var url = `<a href="${rowItems["url"]}" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>`;
-                }
-
-                var card = document.createElement("div");
-                card.setAttribute("class", "card card-experience " + rowItems["tags"]);
-                card.innerHTML = `
-                ${img}
-                <div class="card-body">
-                    <h5 class="card-title">${rowItems["title"]}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">${rowItems["subtitle"]}</h6>
-                    <p class="card-text">${rowItems["body"]}</p>
-                </div>
-                <div class="card-footer text-right">
-                    <small class="text-muted">${rowItems["date"]} | ${rowItems["location"]}</small>
-                    ${url}
-                </div>
-                `;
-                if (rowItems["title"] != "") {
-                    document.getElementById("experience-cards").appendChild(card);
-                };
             });
 
             data['contacts'].forEach(rowItems => {
@@ -454,29 +395,62 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
 
                 table.appendChild(row);
             });
-        };
 
-        function filterSelection(tag) {
-            var card, cards, index, alreadyHidden;
-            cards = document.getElementsByClassName("card-experience");
+            data['experiences']['tags'].forEach(rowItems => {
+                var label = document.createElement("label");
+                label.setAttribute("class", "btn btn-outline-primary border-0 mb-2");
 
-            for (index = 0; index < cards.length; index++) {
-                card = cards[index];
-                alreadyHidden = card.classList.contains("d-none");
+                var checkedState = '';
+                if (rowItems['tag'] == "card-highlights") {
+                    label.classList.add("active");
+                    checkedState = 'checked';
+                }
 
-                if ((tag == "all") || (card.classList.contains(tag))) {
-                    if (alreadyHidden) {
-                        card.classList.remove("d-none");
-                    };
-                } else {
-                    if (!alreadyHidden) {
-                        card.classList.add("d-none");
-                    };
+                label.innerHTML = `
+                <input id="${"filter_" + rowItems["text"]}" 
+                       type="radio"
+                       name="options"
+                       onclick="filterSelection('${rowItems["tag"]}')"
+                ${checkedState}>${rowItems["text"]}`;
+
+                document.getElementById("experience_filters").appendChild(label);
+            });
+
+            data['experiences']['cards'].forEach(rowItems => {
+                var img = ``;
+                if (rowItems["img"] != "") {
+                    img = `<img src="${rowItems["img"]}" class="card-img-top" alt="">`;
                 };
-            };
-        };
 
-        filterSelection("card-highlights");
+                var url = ``;
+                if (rowItems["url"] != "") {
+                    url = `<a href="${rowItems["url"]}" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>`;
+                };
+
+                var card = document.createElement("div");
+                card.setAttribute("class", "card card-experience " + rowItems["tags"]);
+
+                if (!(card.classList.contains('card-highlights'))) {
+                    card.classList.add('d-none');
+                }
+
+                card.innerHTML = `
+                ${img}
+                <div class="card-body">
+                    <h5 class="card-title">${rowItems["title"]}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${rowItems["subtitle"]}</h6>
+                    <p class="card-text">${rowItems["body"]}</p>
+                </div>
+                <div class="card-footer text-right">
+                    <small class="text-muted">${rowItems["date"]} | ${rowItems["location"]}</small>
+                    ${url}
+                </div>`;
+
+                if (rowItems["title"] != "") {
+                    document.getElementById("experience-cards").appendChild(card);
+                };
+            });
+        };
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
