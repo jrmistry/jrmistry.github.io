@@ -173,8 +173,9 @@
                     Out [2]:
                 </div>
                 <div class="media-body">
-                    <iframe class="col" height="420px" frameborder="0" scrolling="no"
-                        src="https://chart-studio.plot.ly/~jrmistry/131.embed?link=false&modebar=false"></iframe>
+                    <div id="output_skills" class="container-fluid p-0" height="500px" ></div>
+                    <!-- <iframe class="col" height="420px" frameborder="0" scrolling="no"
+                        src="https://chart-studio.plot.ly/~jrmistry/131.embed?link=false&modebar=false"></iframe> -->
                 </div>
             </div>
         </div>
@@ -335,6 +336,8 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
 
     </div>
 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <!-- Optional JavaScript -->
     <script>
         function filterSelection(tag) {
@@ -372,6 +375,33 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
             oc_description_text = document.createElement("p");
             oc_description_text.innerHTML = "Jaydeep Mistry is a dedicated friend, a persistent programmer, and a problem solver. He has competed in various app challenges, presented his work at recognized conferences, and earned the respect of his peers through his creative solutions.";
             oc_description.appendChild(oc_description_text);
+
+            // Skills
+            oc_skills = document.getElementById('output_skills');
+            var skills_plot_data = [{
+                type: "sunburst",
+                labels: ["Jaydeep", "Data Engineering", "Python", "Pandas", "AWS", "FME", "GIS", "Geo Databases", "ArcGIS", "GeoPandas", "Web Dev", "Web Apps", "Dashboards", "Bootstrap"],
+                parents: ["", "Jaydeep", "Data Engineering", "Data Engineering", "Data Engineering", "Data Engineering", "Jaydeep", "GIS", "GIS", "GIS", "Jaydeep", "Web Dev", "Web Dev", "Web Dev"],
+                values: [0, 0, 8, 8, 2, 2, 0, 8, 4, 6, 0, 6, 8, 6],
+                outsidetextfont: { size: 20, color: "#377eb8" },
+                leaf: { opacity: 0.4 },
+                marker: { line: { width: 2 } },
+            }];
+
+            var skills_plot_layout = {
+                margin: { l: 0, r: 0, b: 0, t: 0 },
+                hovermode: false,
+            };
+
+            var skills_plot_config = {
+                responsive: true,
+                modeBarButtonsToRemove: [
+                    "toImage", 
+                    "toggleHover"
+                ]
+            };
+
+            Plotly.newPlot(oc_skills, skills_plot_data, skills_plot_layout, skills_plot_config);
 
             // Education
             data['education'].forEach(rowItems => {
