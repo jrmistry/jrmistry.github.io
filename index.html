@@ -111,11 +111,11 @@
                 <div class="media-body">
                     <div class="row">
                         <div class="col-md-8">
+                            <div id="output_description">
+
+                            </div>
                             <p>
-                                Jaydeep Mistry is a dedicated friend, a persistent programmer, and a
-                                problem solver. He has competed in various app challenges,
-                                presented his work at recognized conferences, and earned the respect of his
-                                peers through his creative solutions.
+                                
                             </p>
                         </div>
                         <div class="col col-md-4">
@@ -366,6 +366,15 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
         request.onload = function () {
             const data = request.response;
 
+            // Description
+            var description_text, output_description;
+
+            output_description = document.querySelector('#output_description');
+            description_text = document.createElement("p");
+            description_text.innerHTML = "Jaydeep Mistry is a dedicated friend, a persistent programmer, and a problem solver. He has competed in various app challenges, presented his work at recognized conferences, and earned the respect of his peers through his creative solutions.";
+            output_description.appendChild(description_text);
+            
+            // Education
             data['education'].forEach(rowItems => {
                 var table, row, rowCell, rowCellItem;
                 table = document.querySelector("#education_table_rows");
@@ -382,6 +391,7 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
                 table.appendChild(row);
             });
 
+            // Contacts
             data['contacts'].forEach(rowItems => {
                 var table, row;
                 table = document.querySelector("#contacts_table_rows");
@@ -396,6 +406,8 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
                 table.appendChild(row);
             });
 
+            // Experiences
+            //// Tags
             data['experiences']['tags'].forEach(rowItems => {
                 var label = document.createElement("label");
                 label.setAttribute("class", "btn btn-outline-primary border-0 mb-2");
@@ -416,6 +428,7 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
                 document.getElementById("experience_filters").appendChild(label);
             });
 
+            //// Cards
             data['experiences']['cards'].forEach(rowItems => {
                 var img = ``;
                 if (rowItems["img"] != "") {
