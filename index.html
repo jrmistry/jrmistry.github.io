@@ -367,13 +367,12 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
             const data = request.response;
 
             // Description
-            var description_text, output_description;
+            var oc_description_text, oc_description;
+            oc_description = document.querySelector('#output_description');
+            oc_description_text = document.createElement("p");
+            oc_description_text.innerHTML = "Jaydeep Mistry is a dedicated friend, a persistent programmer, and a problem solver. He has competed in various app challenges, presented his work at recognized conferences, and earned the respect of his peers through his creative solutions.";
+            oc_description.appendChild(oc_description_text);
 
-            output_description = document.querySelector('#output_description');
-            description_text = document.createElement("p");
-            description_text.innerHTML = "Jaydeep Mistry is a dedicated friend, a persistent programmer, and a problem solver. He has competed in various app challenges, presented his work at recognized conferences, and earned the respect of his peers through his creative solutions.";
-            output_description.appendChild(description_text);
-            
             // Education
             data['education'].forEach(rowItems => {
                 var table, row, rowCell, rowCellItem;
