@@ -119,6 +119,33 @@
                 "url": "",
                 "tags": ""
             },{
+                "title": "Data Engineering",
+                "subtitle": "BlueDot",
+                "body": "Working full-time for BlueDot to build their mobility data products which are based on our big data geospatial systems that analyze movement of people globally",
+                "date": "Dec 2020",
+                "location": "Toronto, Canada",
+                "img": "",
+                "url": "https://bluedot.global/",
+                "tags": "card-highlights card-work card-data-science card-gis"
+            },{
+                "title": "Data Analyst",
+                "subtitle": "Flatten.ca",
+                "body": "Consulting for Flatten.ca non-profit organization to help them perform quality control, analytics, and research with their COVID-19 symptoms survey designed for Canada and for Somalia",
+                "date": "Jul 2020",
+                "location": "Canada",
+                "img": "",
+                "url": "https://www.flatten.ca/",
+                "tags": "card-highlights card-work card-data-science card-volunteering"
+            },{
+                "title": "GIS Data Analyst",
+                "subtitle": "Climate Risk Research Group (CRRG)",
+                "body": "Part-time consulting for the CRRG from the University of Waterloo to perform analysis related to climate change, sea-level rise, coastal erosion, global tourism, and COVID-19",
+                "date": "Jun 2020",
+                "location": "Canada",
+                "img": "",
+                "url": "https://uwaterloo.ca/climate-risk-research-group/",
+                "tags": "card-work card-gis card-data-science"
+            },{
                 "title": "How Pandemics impact Tourism",
                 "subtitle": "Research paper maps and data viz",
                 "body": "A research paper for which I made maps visualizing the spread of COVID-19 via air travel.",
@@ -135,7 +162,7 @@
                 "location": "Toronto, ON, Canada",
                 "img": "assets/imgs/jrmistry.github.io_COVID-19-Global-Health-Status-Dashboard.html.png",
                 "url": "https://jrmistry.github.io/COVID-19-Global-Health-Status-Dashboard",
-                "tags": "card-highlights card-projects card-gis"
+                "tags": "card-projects card-gis"
             },{
                 "title": "COVID-19 Regional Health Tracker",
                 "subtitle": "ArcGIS Online Dashboard",
@@ -144,7 +171,7 @@
                 "location": "Toronto, ON, Canada",
                 "img": "assets/imgs/jrmistry.github.io_COVID-19-Regional-Health-Tracker.html(iPad).png",
                 "url": "https://jrmistry.github.io/COVID-19-Regional-Health-Tracker",
-                "tags": "card-highlights card-projects card-gis"
+                "tags": "card-projects card-gis"
             },{
                 "title": "Simple Flight Simulator",
                 "subtitle": "3D GIS Project",
@@ -352,7 +379,7 @@
                 "location": "Waterloo, ON, Canada",
                 "img": "assets/imgs/esricanada-ce.github.io_ecce-app-challenge-2018_Water3D_app_(iPad).png",
                 "url": "https://esricanada-ce.github.io/appchallenge/2018/teams/uw/Water3D/",
-                "tags": "card-highlights card-projects card-gis"
+                "tags": "card-projects card-gis"
             },
             {
                 "title": "2nd Place in the ECCE App Challenge",
@@ -362,7 +389,7 @@
                 "location": "Waterloo, ON, Canada",
                 "img": "assets/imgs/esricanada-ce.github.io_ecce-app-challenge-2017_Team_Earth_Link_app_(iPad).png",
                 "url": "https://esricanada-ce.github.io/appchallenge/2017/teams/uw/Team_Earth_Link/",
-                "tags": "card-highlights card-projects card-gis"
+                "tags": "card-projects card-gis"
             },
             {
                 "title": "GIS Analyst",
@@ -372,7 +399,7 @@
                 "location": "Toronto, ON, Canada",
                 "img": "",
                 "url": "https://esri.ca/en/programs/the-community-map-of-canada",
-                "tags": "card-highlights card-work card-gis"
+                "tags": "card-work card-gis"
             },
             {
                 "title": "Junior Land Use Change Analyst",
