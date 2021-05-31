@@ -57,7 +57,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#cell-jaydeep-mistry">Jaydeep Mistry</a>
+            <a class="navbar-brand" href="#">Jaydeep Mistry</a>
 
             <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav nav">
@@ -82,7 +82,7 @@
     </nav>
 
     <div data-target="#navbar" class="container">
-        <div id="cell-jaydeep-mistry" class="pt-cell bg-white">
+        <div id="cell-description" class="pt-cell bg-white">
             <div class="media">
                 <div class='ml-2 mr-2 text-primary'>
                     In [0]:
@@ -147,8 +147,9 @@
                     Out [1]:
                 </div>
                 <div class="media-body">
-                    <iframe class="container-fluid p-0" height="500px" frameborder="0" scrolling="no"
-                        src="https://chart-studio.plot.ly/~jrmistry/134.embed?link=false&modebar=true"></iframe>
+                    <div id="output_location" class="container-fluid p-0" height="500px" ></div>
+                    <!-- <iframe class="container-fluid p-0" height="500px" frameborder="0" scrolling="no"
+                        src="https://chart-studio.plot.ly/~jrmistry/134.embed?link=false&modebar=true"></iframe> -->
                 </div>
             </div>
         </div>
@@ -402,6 +403,44 @@ Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></
             };
 
             Plotly.newPlot(oc_skills, skills_plot_data, skills_plot_layout, skills_plot_config);
+
+            // Location
+            oc_location = document.getElementById('output_location');
+
+            var location_plot_data = [{
+                type: 'scattermapbox',
+                lat: ['43.613193'],
+                lon: ['-79.343604'],
+                mode: 'markers',
+                marker: {
+                    size: 14,
+                    color: 'red',
+                },
+                text: ['Toronto'],
+                textposition: "bottom right"
+            }];
+
+            var location_plot_layout = {
+                autosize: true,
+                hovermode: 'closest',
+                mapbox: { style: "open-street-map", center: { lat: 43.7, lon: -79.343604 }, zoom: 9 },
+                margin: { r: 0, t: 50, b: 0, l: 0 },
+                title: {
+                    text: 'Toronto, Ontario, Canada; Remote',
+                }
+            };
+
+            var location_plot_config = {
+                responsive: true,
+                modeBarButtonsToRemove: [
+                    "toImage",
+                    "select2d",
+                    "lasso2d",
+                    "toggleHover"
+                ]
+            };
+
+            Plotly.newPlot(oc_location, location_plot_data, location_plot_layout, location_plot_config);
 
             // Education
             data['education'].forEach(rowItems => {
