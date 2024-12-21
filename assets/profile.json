@@ -44,10 +44,10 @@
             "text": "linkedin.com/in/jaydeep-mistry"
         },
         {
-            "index": 2,
-            "fab-class": "fab fa-twitter-square fa-3x",
-            "href": "https://twitter.com/Jaydeep__Mistry",
-            "text": "twitter.com/Jaydeep__Mistry"
+            "index": 4,
+            "fab-class": "fab fa-github-square fa-3x",
+            "href": "https://github.com/jrmistry",
+            "text": "github.com/jrmistry"
         },
         {
             "index": 3,
@@ -56,11 +56,12 @@
             "text": "kaggle.com/jrmistry"
         },
         {
-            "index": 4,
-            "fab-class": "fab fa-github-square fa-3x",
-            "href": "https://github.com/jrmistry",
-            "text": "github.com/jrmistry"
+            "index": 2,
+            "fab-class": "fab fa-twitter-square fa-3x",
+            "href": "https://x.com/JaydeepMistryCA",
+            "text": "x.com/JaydeepMistryCA"
         }
+        
     ],
     "experiences": {
         "tags": [
@@ -119,7 +120,7 @@
                 "url": "",
                 "tags": ""
             },{
-                "title": "Data Engineering",
+                "title": "Data Engineer",
                 "subtitle": "BlueDot",
                 "body": "Working full-time for BlueDot to build their mobility data products which are based on our big data geospatial systems that analyze movement of people globally",
                 "date": "Dec 2020",
